@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -6,7 +5,7 @@ export default function Footer() {
       <footer className="px-4 py-8 md:px-8 lg:px-12 bg-blue-600">
          <div className="flex flex-col items-center space-y-6 sm:flex-row sm:justify-between sm:items-center sm:space-y-0 sm:space-x-6">
             <div>
-               <Image src="/logo-inverted.svg" alt="NHSX Logo" width={80} height={40} className="object-contain" />
+               <img src="/logo-inverted.svg" alt="NHSX Logo" width={80} height={40} className="object-contain" />
             </div>
             <div className="flex flex-col items-center space-y-6 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-8 font-semibold font-mono text-white">
                <Link href="#">
