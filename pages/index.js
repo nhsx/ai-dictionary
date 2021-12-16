@@ -87,6 +87,8 @@ export default function Home() {
             isOpen={showTerm}
             related={["APIs", "Algorithm", "Analogical Reasoning"]}
             onClose={() => setShowTerm(false)}
+            onNext={onNext} 
+            onPrev={onPrev}
          />
 
          <div className="min-h-screen lg:h-screen flex flex-col">
@@ -95,7 +97,7 @@ export default function Home() {
             <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchRef={searchRef} />
 
             {/* Main content */}
-            <TermList terms={filteredTerms} isShowingTerm={showTerm} onSelectTermIndex={(index) => setCurrentTermIndex(index)} onNext={onNext} onPrev={onPrev} />
+            <TermList terms={filteredTerms} isShowingTerm={showTerm} onSelectTermIndex={(index) => setCurrentTermIndex(index)} />
 
             {/* Footer */}
             <Footer />
