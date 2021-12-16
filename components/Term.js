@@ -1,44 +1,13 @@
-import Link from "next/link"
-import { Fragment, useEffect, useState } from "react"
+import { Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid"
-import { useRecoilState, useRecoilValue } from "recoil"
-import { currentTermIndexState, termsState } from "atoms/dictionary"
+import { useRecoilState } from "recoil"
+import { currentTermIndexState } from "atoms/dictionary"
 
-export default function Term({ isOpen, title, description, related, onClose }) {
+export default function Term({ isOpen, title, description, related, onClose, onNext, onPrev }) {
 
    // Shared state 
-   const terms = useRecoilValue(termsState)
-   const [currentTermIndex, setCurrentTermIndex] = useRecoilState(currentTermIndexState)
-
-   // Terms nav 
-   const goPrev = () => setCurrentTermIndex((currentTermIndex - 1) < 0 ? (terms.length - 1) : (currentTermIndex - 1))
-   const goNext = () => setCurrentTermIndex((currentTermIndex + 1) >= terms.length ? 0 : (currentTermIndex + 1))
-
-   // Handle keyboard input 
-   const [keyToggle, setKeyToggle] = useState(false)
-   function handleKeyInput(e) {
-      if (e.key === 'ArrowLeft') {
-         goPrev()
-         e.preventDefault()
-      }
-      if (e.key === 'ArrowRight') {
-         goNext()
-         e.preventDefault()
-      }
-      if (e.key === 'Escape') {
-         onClose()
-         e.preventDefault()
-      }
-      setKeyToggle(!keyToggle)
-   }
-   useEffect(() => {
-      window.addEventListener("keydown", handleKeyInput)
-      if(!isOpen) window.removeEventListener("keydown", handleKeyInput)
-      return () => {
-         window.removeEventListener("keydown", handleKeyInput)
-      };
-   }, [isOpen, keyToggle]);
+   const [_, setCurrentTermIndex] = useRecoilState(currentTermIndexState)
 
    return (
       <Transition appear show={isOpen} as={Fragment}>
@@ -88,16 +57,16 @@ export default function Term({ isOpen, title, description, related, onClose }) {
                            </Dialog.Title>
                         </div>
                         <div className="flex items-center">
-                           <button type="button" className="block p-1 text-white w-10 h-10" onClick={goPrev}>
+                           <button type="button" className="block p-1 text-white w-10 h-10" onClick={onPrev}>
                               <ArrowLeftIcon />
                            </button>
-                           <button type="button" className="block p-1 text-white w-10 h-10" onClick={goNext}>
+                           <button type="button" className="block p-1 text-white w-10 h-10" onClick={onNext}>
                               <ArrowRightIcon />
                            </button>
                         </div>
                      </div>
 
-                     <Dialog.Description as="p" className="mt-4 text-lg text-blue-200">
+                     <Dialog.Description as="p" className="mt-6 text-xl md:text-2xl text-blue-200">
                         {description}
                      </Dialog.Description>
 

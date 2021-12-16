@@ -1,24 +1,27 @@
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 
-const SearchBox = ({ searchTerm, setSearchTerm }) => (
+const SearchBox = ({ searchTerm, setSearchTerm, searchRef }) => (
    <div className="relative font-mono">
       <input
+         ref={searchRef}
          type="text"
          value={searchTerm}
          onChange={(e) => setSearchTerm(e.target.value)}
-         className="w-full py-3 px-4 bg-white bg-opacity-10 border border-blue-400 placeholder:text-blue-200 text-blue-50 rounded-md text-sm focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+         className="w-full py-3 px-4 peer bg-white bg-opacity-10 border border-blue-400 placeholder:text-blue-200 text-blue-50 rounded-md text-sm focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
          placeholder="Search terms"
       />
       {!searchTerm && (
-         <div className="absolute right-0 top-0 py-3 px-4 text-sm text-blue-200 border border-transparent">
-            ⌘+K
+         <div className="hidden peer-focus:hidden lg:flex justify-center items-center absolute right-0 top-0 p-2 border border-transparent">
+            <div className="flex-1 px-2 py-1 bg-white rounded bg-opacity-10 text-sm text-blue-200">
+               /
+            </div>
          </div>
       )}
    </div>
 )
 
-export default function Header({ searchTerm, setSearchTerm, }) {
+export default function Header({ searchTerm, setSearchTerm, searchRef }) {
    return (
       <Disclosure as="nav" className="px-4 py-4 md:py-8 md:px-8 lg:px-12 bg-blue-500">
          {({ open }) => (
@@ -41,7 +44,7 @@ export default function Header({ searchTerm, setSearchTerm, }) {
 
                   {/* Desktop search */}
                   <div className="hidden sm:ml-6 sm:flex">
-                     <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                     <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchRef={searchRef} />
                   </div>
 
                   {/* Mobile menu toggle */}
@@ -62,7 +65,7 @@ export default function Header({ searchTerm, setSearchTerm, }) {
                {/* Mobile menu */}
                <Disclosure.Panel className="sm:hidden pt-4">
                   <div className="py-3">
-                     <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                     <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchRef={searchRef} />
                   </div>
                </Disclosure.Panel>
 
