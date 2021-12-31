@@ -1,11 +1,21 @@
-import { Router, useRouter } from "next/router"
+import { useRouter } from "next/router"
 import { useEffect, useMemo, useRef, useState } from "react"
 import { useRecoilState, useRecoilValue } from "recoil"
-import { currentTermIndexState, termsState } from "atoms/dictionary"
+import { currentTermSlugState, termsState } from "atoms/dictionary"
 import Term from "components/Term"
 import TermList from "components/TermList"
 import Footer from "components/Footer"
 import Header from "components/Header"
+
+/**
+ * Sort by title property 
+ */
+const titleSort = (a, b) => a.title > b.title
+
+/**
+ * Find search query in term titles 
+ */
+const titleSearch = (search, terms) => terms.filter(term => term.title.toLowerCase().indexOf(search.toLowerCase()) > -1).sort(titleSort)
 
 export default function Home() {
 
@@ -14,19 +24,27 @@ export default function Home() {
 
    // Shared state
    const terms = useRecoilValue(termsState)
-   const [currentTermIndex, setCurrentTermIndex] = useRecoilState(currentTermIndexState)
+   const [currentTermSlug, setCurrentTermSlug] = useRecoilState(currentTermSlugState)
 
    // Local state 
    const searchRef = useRef(null)
    const [showTerm, setShowTerm] = useState(false)
    const [searchTerm, setSearchTerm] = useState('')
    const [keyToggle, setKeyToggle] = useState(false)
-   const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? terms.filter(term => term.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1).sort() : [...terms].sort()) : [], [searchTerm])
+   const [currentTermIndex, setCurrentTermIndex] = useState(null)
+   const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? titleSearch(searchTerm, terms) : [...terms].sort(titleSort)) : [], [searchTerm])
    const currentTerm = useMemo(() => currentTermIndex !== null ? filteredTerms[currentTermIndex] : null, [currentTermIndex])
 
    // Terms nav 
    const onPrev = () => showTerm && setCurrentTermIndex((currentTermIndex - 1) < 0 ? (terms.length - 1) : (currentTermIndex - 1))
    const onNext = () => showTerm && setCurrentTermIndex((currentTermIndex + 1) >= terms.length ? 0 : (currentTermIndex + 1))
+
+   // On slug change
+   useEffect(() => {
+      if(currentTermSlug) {
+         setCurrentTermIndex(filteredTerms.findIndex(term => term.slug === currentTermSlug))
+      }
+   }, [currentTermSlug])
 
    // Handle keyboard input 
    function handleKeyInput(e) {
@@ -52,21 +70,16 @@ export default function Home() {
    // Detect current term from URL 
    useEffect(() => {
       if(router.query.term) {
-         const matchedIndex = terms.findIndex((term) => term.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '') === router.query.term)
-         if(matchedIndex) setCurrentTermIndex(matchedIndex)
+         const matchedIndex = terms.findIndex((term) => term.slug === router.query.term)
+         if(matchedIndex) setCurrentTermSlug(terms[matchedIndex].slug)
       }
    }, [])
 
    // Show selected term on select
    useEffect(() => {
-      if (currentTermIndex !== null && !showTerm) setShowTerm(true)
-      router.push( currentTermIndex ? { pathname: '/', query: { term: currentTerm.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '') }} : '/', undefined, { shallow: true })
-   }, [currentTermIndex])
-
-   // Clear search term to allow for re-selection 
-   useEffect(() => {
-      if (!showTerm) setTimeout(() => setCurrentTermIndex(null), 300)
-   }, [showTerm])
+      if (currentTerm && !showTerm) setShowTerm(true)
+      router.push( currentTerm ? { pathname: '/', query: { term: currentTerm.slug }} : '/', undefined, { shallow: true })
+   }, [currentTerm])
 
    // Watch for key input 
    useEffect(() => {
@@ -82,22 +95,21 @@ export default function Home() {
 
          {/* Active term */}
          <Term
-            title={currentTerm}
-            description={"Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision."}
+            {...currentTerm}
             isOpen={showTerm}
-            related={["APIs", "Algorithm", "Analogical Reasoning"]}
             onClose={() => setShowTerm(false)}
             onNext={onNext} 
             onPrev={onPrev}
+            onSelectTermSlug={(slug) => { setCurrentTermSlug(slug); setShowTerm(true) }}
          />
 
          <div className="min-h-screen lg:h-screen flex flex-col">
 
             {/* Header */}
-            <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} searchRef={searchRef} />
+            <Header searchTerm={searchTerm} searchRef={searchRef} setSearchTerm={setSearchTerm} />
 
             {/* Main content */}
-            <TermList terms={filteredTerms} isShowingTerm={showTerm} onSelectTermIndex={(index) => setCurrentTermIndex(index)} />
+            <TermList terms={filteredTerms} isShowingTerm={showTerm} onSelectTermSlug={(slug) => { setCurrentTermSlug(slug); setShowTerm(true) }} />
 
             {/* Footer */}
             <Footer />

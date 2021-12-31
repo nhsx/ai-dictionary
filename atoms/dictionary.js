@@ -1,12 +1,12 @@
 import { atom } from "recoil";
-import terms from "data/terms.json"
+import data from "data/terms.json"
 
 export const termsState = atom({
    key: 'termsState',
-   default: terms 
+   default: data.terms
 })
 
-export const currentTermIndexState = atom({
-   key: 'currentTermIndexState',
+export const currentTermSlugState = atom({
+   key: 'currentTermSlugState',
    default: null
 })

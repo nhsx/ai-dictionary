@@ -1,13 +1,14 @@
 import { Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid"
-import { useRecoilState } from "recoil"
-import { currentTermIndexState } from "atoms/dictionary"
+import data from "data/terms.json"
 
-export default function Term({ isOpen, title, description, related, onClose, onNext, onPrev }) {
+export default function Term({ isOpen, title, description, related, onClose, onNext, onPrev, onSelectTermSlug }) {
 
-   // Shared state 
-   const [_, setCurrentTermIndex] = useRecoilState(currentTermIndexState)
+   /**
+    * Get related terms from array
+    */
+   const relatedTerms = related ? data.terms.filter(term => related.includes(term.slug)) : []
 
    return (
       <Transition appear show={isOpen} as={Fragment}>
@@ -72,13 +73,19 @@ export default function Term({ isOpen, title, description, related, onClose, onN
 
                      {/* Related terms */}
                      {
-                        related?.length > 0 && (
+                        relatedTerms?.length > 0 && (
                            <div className="space-y-2 font-mono mt-24">
                               <h3 className="text-white font-bold">Related terms</h3>
-                              {related.map((term, index) => (
-                                 <button type="button" onClick={() => setCurrentTermIndex(index)} key={term} className="block text-blue-200 hover:text-white duration-100">
-                                    {term}
+                              {relatedTerms.map((term, index) => (
+                                 <button
+                                    key={term.title}
+                                    type="button"
+                                    onClick={() => onSelectTermSlug(term.slug)}
+                                    className="block text-blue-200 hover:text-white duration-100"
+                                 >
+                                    {term.title}
                                  </button>
+
                               ))}
                            </div>
                         )

@@ -1,7 +1,7 @@
-import { motion, useTransform, useViewportScroll } from "framer-motion"
+import { motion } from "framer-motion"
 import { useState } from "react"
 
-export default function TermList({ terms, isShowingTerm, onSelectTermIndex }) {
+export default function TermList({ terms, isShowingTerm, onSelectTermSlug }) {
 
    const [firstGradientOpacity, setFirstGradientOpacity] = useState(0)
 
@@ -18,12 +18,12 @@ export default function TermList({ terms, isShowingTerm, onSelectTermIndex }) {
                {terms.length == 0 && <p className="text-blue-200 hover:text-white text-lg md:text-2xl font-mono duration-100 text-left">No results found.</p>}
                {terms.map((term, index) => (
                   <button
-                     key={term + index}
+                     key={term.title + index}
                      type="button"
-                     onClick={() => onSelectTermIndex(index)}
+                     onClick={() => onSelectTermSlug(term.slug)}
                      className="text-blue-200 hover:text-white text-lg md:text-2xl font-mono duration-100 text-left"
                   >
-                     {term}
+                     {term.title}
                   </button>
                ))}
             </div>
