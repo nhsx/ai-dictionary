@@ -1,34 +1,47 @@
 {
-   "terms": [
-     {
-       "title": "Artificial Intelligence",
-       "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-       "slug": "ai",
-       "related": ["machine-learning", "autonomous"]
-     },
-     {
-       "title": "Machine Learning",
-       "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-       "slug": "machine-learning",
-       "related": ["ai", "autonomous"]
-     },
-     {
-       "title": "Autonomous",
-       "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-       "slug": "autonomous",
-       "related": ["machine-learning", "ai"]
-     },
-     {
-       "title": "API",
-       "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-       "slug": "api",
-       "related": ["database"]
-     },
-     {
-       "title": "Database",
-       "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-       "slug": "database",
-       "related": ["api"]
-     }
-   ]
- }
+  "terms": [
+    {
+      "title": "Artificial Intelligence",
+      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
+      "slug": "ai",
+      "related": [
+        "machine-learning",
+        "autonomous"
+      ]
+    },
+    {
+      "title": "Machine Learning",
+      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
+      "slug": "machine-learning",
+      "related": [
+        "ai",
+        "autonomous"
+      ]
+    },
+    {
+      "title": "Autonomous",
+      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
+      "slug": "autonomous",
+      "related": [
+        "machine-learning",
+        "ai"
+      ]
+    },
+    {
+      "title": "API",
+      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
+      "slug": "api",
+      "related": [
+        "database"
+      ]
+    },
+    {
+      "title": "Database",
+      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
+      "slug": "database",
+      "related": [
+        "api"
+      ]
+    }
+  ]
+}

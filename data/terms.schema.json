@@ -32,7 +32,8 @@
                             "description": "Slug for a related term",
                             "type": "string",
                             "$ref": "#/definitions/slug"
-                        }
+                        },
+                        "uniqueItems": true
                     }
                 },
                 "required": [
