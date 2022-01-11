@@ -7,7 +7,7 @@ bugs, fixing bugs, suggesting new features, or writing documentation.
 ## Contributing
 
 If you’ve got an idea, suggestion, or encountered a bug, you can
-[create a GitHub issue](https://github.com/nhsx/ai-dictionary/issues/new).
+[create a GitHub issue](https://github.com/nhsx/ai-dictionary/issues/new/choose).
 
 When raising bugs please explain the issue in good detail and provide a guide to how to replicate it.
 

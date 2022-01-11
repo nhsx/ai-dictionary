@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-Thank you for suggesting a new term
+Thank you for suggesting a new term, please enter its details below:
 
 **Title:** 
 
