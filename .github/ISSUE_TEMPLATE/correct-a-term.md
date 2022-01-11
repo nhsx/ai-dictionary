@@ -2,7 +2,7 @@
 name: Correct a term
 about: Flag a typo/inaccuracy of an existing term
 title: "[CORRECTION] "
-labels: ''
+labels: correction
 assignees: amadeuspzs
 
 ---
