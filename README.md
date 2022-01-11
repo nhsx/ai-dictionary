@@ -1,3 +1,5 @@
+[![Validate terms.json](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml/badge.svg)](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml)
+
 # NHSX AI Dictionary 
 
 ## What is it? 
@@ -6,18 +8,21 @@ A simple dictionary of common AI terms with basic search and navigation.
 
 ## Term Management
 
-The terms are currently stored in `data/terms.json`. 
+The terms are currently stored in [`data/terms.json`](data/terms.json) following the schema defined in [`data/terms.schema.json`](data/terms.schema.json). 
 
 To add new terms, simply add a new item to the terms array following the structure below: 
 
 | Field       | Type   | Description                                                       |
 |-------------|--------|-------------------------------------------------------------------|
-| title       | string | The title of the term. E.G. 'Artificial Intelligence'.            |
+| title       | string | The title of the term e.g. "Artificial Intelligence".            |
 | description | string | The definition of the term.                                       |
-| related     | array  | Array of slugs of related terms, E.G. 'ai' or 'machine-learning'. |
+| slug        | string | The short-name of the term for use in the URL and related terms e.g. "ai".
+| related     | array  | Array of slugs of related terms, e.g. "ai" or "machine-learning". |
 
 Take a look at the existing terms in the JSON file as an example of the structure above. 
 You can also edit existing terms or remove them from the array. 
+
+[Automated tests](tests/) run to check valid JSON syntax on every push to this repo.
 
 ## Stack
 

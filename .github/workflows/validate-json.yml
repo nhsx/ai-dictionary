@@ -1,0 +1,21 @@
+name: Validate terms.json
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get files
+        uses: actions/checkout@v2
+
+      - name: Install python dependencies
+        run: pip install -r tests/requirements.txt
+
+      - name: Validate JSON schema
+        run: jsonschema --instance data/terms.json data/terms.schema.json
+
+      - name: Validate JSON contents
+        working-directory: ./tests
+        run: python validate_json.py
