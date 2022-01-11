@@ -15,3 +15,7 @@ jobs:
 
       - name: Validate JSON schema
         run: jsonschema --instance data/terms.json data/terms.schema.json
+
+      - name: Validate JSON contents
+        working-directory: ./tests
+        run: python validate_json.py
