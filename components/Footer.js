@@ -9,17 +9,21 @@ export default function Footer() {
                <img src={`${prefix}/logo-inverted.svg`} alt="NHSX Logo" width={80} height={40} className="object-contain" />
             </div>
             <div className="flex flex-col items-center space-y-6 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-8 font-semibold font-mono text-white">
-               <Link href="#">
-                  <a>
+               <Link href="https://www.nhsx.nhs.uk/ai-lab/">
+                  <a
+                     target="_BLANK"
+                  >
                      NHS AI Lab
                   </a>
                </Link>
-               <Link href="#">
-                  <a>
-                     Share
+               <Link href="https://github.com/nhsx/ai-dictionary/issues/new">
+                  <a
+                     target="_BLANK"
+                  >
+                     Contribute
                   </a>
                </Link>
-               <Link href="#">
+               <Link href="https://github.com/nhsx/ai-dictionary">
                   <a
                      target="_BLANK"
                      className="rounded-full"
