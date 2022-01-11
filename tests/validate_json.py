@@ -28,8 +28,6 @@ except:
 
 slugs = []
 for term in terms["terms"]:
-    if term["slug"] == "":
-        raise Exception(f"Blank slug for term \"{term['title']}\"")
     if term["slug"] in slugs:
         raise Exception(f"Duplicate slug found for \"{term['slug']}\"")
     else:
@@ -41,8 +39,6 @@ print(f"{len(slugs)} unique slug(s) in database")
 
 titles = []
 for term in terms["terms"]:
-    if term["title"] == "":
-        raise Exception(f"Blank title for slug \"{term['slug']}\"")
     if term["title"] in titles:
         raise Exception(f"Duplicate title found for \"{term['title']}\"")
     else:
