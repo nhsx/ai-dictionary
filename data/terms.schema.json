@@ -14,11 +14,13 @@
                 "properties": {
                     "title": {
                         "description": "The AI term",
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 2
                     },
                     "description": {
                         "description": "The explanation of what the AI term is",
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 2
                     },
                     "slug": {
                         "description": "Short form identifier for the term, used in related terms and for URL bookmarking",
@@ -53,7 +55,8 @@
     "definitions": {
         "slug": {
             "description": "Unique short form identifier for a specific AI term",
-            "type": "string"
+            "type": "string",
+            "minLength": 2
         }
     }
 }
