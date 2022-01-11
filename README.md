@@ -1,3 +1,5 @@
+[![Validate terms.json](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml/badge.svg)](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml)
+
 # NHSX AI Dictionary 
 
 ## What is it? 
