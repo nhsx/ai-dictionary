@@ -7,7 +7,7 @@ assignees: amadeuspzs
 
 ---
 
-Thank you for finding and reporting an inaccuracy in the term.
+Thank you for finding and reporting an inaccuracy in the term, please fill in the details below:
 
 **Term:**
 
