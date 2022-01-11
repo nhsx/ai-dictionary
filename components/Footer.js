@@ -16,7 +16,7 @@ export default function Footer() {
                      NHS AI Lab
                   </a>
                </Link>
-               <Link href="https://github.com/nhsx/ai-dictionary/issues/new">
+               <Link href="https://github.com/nhsx/ai-dictionary/issues/new/choose">
                   <a
                      target="_BLANK"
                   >
