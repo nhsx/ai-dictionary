@@ -1,0 +1,58 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://nhsx.github.io/ai-dictionary",
+    "title": "AI terms",
+    "description": "AI terms in NHSX AI Dictionary",
+    "type": "object",
+    "properties": {
+        "terms": {
+            "description": "The list of AI terms",
+            "type": "array",
+            "items": {
+                "description": "An AI term",
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "description": "The AI term",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The explanation of what the AI term is",
+                        "type": "string"
+                    },
+                    "slug": {
+                        "description": "Short form identifier for the term, used in related terms and for URL bookmarking",
+                        "type": "string",
+                        "$ref": "#/definitions/slug"
+                    },
+                    "related": {
+                        "description": "A list of related terms",
+                        "type": "array",
+                        "items": {
+                            "description": "Slug for a related term",
+                            "type": "string",
+                            "$ref": "#/definitions/slug"
+                        }
+                    }
+                },
+                "required": [
+                    "title",
+                    "description",
+                    "slug",
+                    "related"
+                ]
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "terms"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "slug": {
+            "description": "Unique short form identifier for a specific AI term",
+            "type": "string"
+        }
+    }
+}
