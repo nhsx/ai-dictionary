@@ -15,7 +15,11 @@ const titleSort = (a, b) => a.title > b.title
 /**
  * Find search query in term titles 
  */
-const titleSearch = (search, terms) => terms.filter(term => term.title.toLowerCase().indexOf(search.toLowerCase()) > -1).sort(titleSort)
+const titleSearch = (search, terms) => terms.filter(term => 
+   term.title.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+   term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 || 
+   term.slug.toLowerCase().indexOf(search.toLowerCase()) > -1
+).sort(titleSort)
 
 export default function Home() {
 
