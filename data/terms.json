@@ -2,7 +2,7 @@
   "terms": [
     {
       "title": "Artificial Intelligence",
-      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
+      "description": "Artificial intelligence is the <a href='https://google.com'>simulation</a> of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
       "slug": "ai",
       "related": [
         "machine-learning",
