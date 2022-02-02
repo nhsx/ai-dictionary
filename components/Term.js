@@ -68,7 +68,7 @@ export default function Term({ isOpen, title, description, related, onClose, onN
                      </div>
 
                      <Dialog.Description as="p" className="mt-6 text-xl md:text-2xl text-blue-200">
-                        {description}
+                        <div id="term-content" dangerouslySetInnerHTML={{ __html: description }}></div>
                      </Dialog.Description>
 
                      {/* Related terms */}
