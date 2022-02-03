@@ -7,7 +7,7 @@ export default function MyApp({ Component, pageProps }) {
    return (
       <>
          <Head>
-            <title>AI Dictionary | NHSX</title>
+            <title>AI Dictionary | NHS AI Lab</title>
             <link rel="icon" href="/favicon.ico" />
             <link
                href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
