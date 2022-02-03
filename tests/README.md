@@ -15,3 +15,5 @@ This python script extends json schema validation to ensure:
 1. `slug`: unique
 2. `title`: unique
 3. `related`: no references to non-existent slugs
+4. `related`: no self-referencing
+5. `description`: no broken links in URLs
