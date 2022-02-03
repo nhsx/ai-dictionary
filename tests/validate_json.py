@@ -73,7 +73,17 @@ for term in terms["terms"]:
             raise Exception(f"Orphaned related slug found: {related_slug}")
 print("No orphaned slugs found")
 
+# Check for self-referencing terms
+
+for term in terms["terms"]:
+    related = term["related"]
+    for related_slug in related:
+        if related_slug == term["slug"]:
+            raise Exception(f"Self-referencing slug found: {related_slug}")
+print("No self-referencing slugs found")
+
 # Check valid links
+
 extractor = URLExtract()
 for term in terms["terms"]:
     urls = extractor.find_urls(term["description"])

@@ -526,7 +526,7 @@
         "ai",
         "machine-learning",
         "predictive-analytics",
-        "classification"
+        "regression"
       ]
     },
     {
@@ -538,7 +538,7 @@
         "ai",
         "machine-learning",
         "predictive-analytics",
-        "regression"
+        "classification"
       ]
     },
     {
