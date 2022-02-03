@@ -1,10 +1,10 @@
 [![Validate terms.json](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml/badge.svg)](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml)
 
-# NHSX AI Dictionary 
+# NHS AI Dictionary 
 
 ## What is it? 
 
-A simple dictionary of common AI terms with basic search and navigation. 
+A simple dictionary of common AI terms with a health and care context, with basic search and navigation. 
 
 ## Term Management
 
@@ -70,10 +70,6 @@ npm run export
 ## Deployment  
 
 Upon merging into production, the project is automatically deployed to Github Pages via a Githook Action found in `.github/workflows/gh-pages-deployment.yml`. 
-
-## Deploy on Vercel
-
-To get the most out of Next.JS, it may be worth looking at deploying on [Vercel](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) long term. 
 
 ## Licence
 
