@@ -5,6 +5,8 @@
 # 1. slug: unique
 # 2. title: unique
 # 3. related: no references to non-existent slugs
+# 4. related: no self-references
+# 5. description: checks for broken links
 
 # Import libraries
 import json
