@@ -1,4 +1,3 @@
-# %% [markdown]
 # # Validate terms lists
 #
 # This python script extends json schema validation (`jsonschema --instance terms.json terms.schema.json`) to ensure:
@@ -7,12 +6,31 @@
 # 2. title: unique
 # 3. related: no references to non-existent slugs
 
-# %%
 # Import libraries
 import json
+import urllib.request
+from urlextract import URLExtract
+
+# Define custom functions
+def check_url_live(url):
+    # Requires valid user agent for certain website
+    req = urllib.request.Request(
+        url,
+        data=None,
+        headers={
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36"
+        },
+    )
+    try:
+        res = urllib.request.urlopen(req)
+        if res.code == 200:
+            return
+        else:
+            raise Exception(f"URL check failed for {url} with response {res.code}")
+    except:
+        raise Exception(f"URL check failed for {url}")
 
 
-# %%
 # Load terms
 try:
     f = open("../data/terms.json")
@@ -54,3 +72,12 @@ for term in terms["terms"]:
         if related_slug not in slugs:
             raise Exception(f"Orphaned related slug found: {related_slug}")
 print("No orphaned slugs found")
+
+# Check valid links
+extractor = URLExtract()
+for term in terms["terms"]:
+    urls = extractor.find_urls(term["description"])
+    for url in urls:
+        check_url_live(url)
+
+print("No broken links found")
