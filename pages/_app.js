@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
+import { prefix } from 'lib/prefix'
 
 import 'styles/index.css'
 
@@ -8,7 +9,7 @@ export default function MyApp({ Component, pageProps }) {
       <>
          <Head>
             <title>AI Dictionary | NHS AI Lab</title>
-            <link rel="icon" href="/favicon.ico" />
+            <link rel="icon" href={`${prefix}/favicon.ico`} />
             <link
                href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
                rel="stylesheet"
