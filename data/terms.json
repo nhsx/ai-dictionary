@@ -1,45 +1,776 @@
 {
   "terms": [
     {
-      "title": "Artificial Intelligence",
-      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-      "slug": "ai",
+      "title": "Descriptive analytics",
+      "description": "The analysis of data from the past that can help answer “What happened?” or “What is happening?”.<br><br>For example, an analysis of A&E attendance may show a decrease in visitor numbers over the last 3 months.",
+      "slug": "descriptive-analytics",
       "related": [
-        "machine-learning",
-        "autonomous"
+        "predictive-analytics",
+        "prescriptive-analytics",
+        "statistics"
       ]
     },
     {
-      "title": "Machine Learning",
-      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-      "slug": "machine-learning",
+      "title": "Predictive analytics",
+      "description": "The analysis of data where the goal is to create predictions of the future based on the past that can help answer “What will happen?”<br><br>For example, using historical admissions data, a Trust may be able to predict or forecast the number of admissions in the next 24 hours.",
+      "slug": "predictive-analytics",
       "related": [
-        "ai",
-        "autonomous"
+        "descriptive-analytics",
+        "prescriptive-analytics",
+        "statistics",
+        "supervised",
+        "machine-learning"
       ]
     },
     {
-      "title": "Autonomous",
-      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-      "slug": "autonomous",
+      "title": "Prescriptive analytics",
+      "description": "The use of predictive analytics to recommend or automatically action an activity.<br><br>For example, using a prediction of future admissions, a Trust could recommend or automatically assign a bed to an incoming patient.",
+      "slug": "prescriptive-analytics",
       "related": [
+        "descriptive-analytics",
+        "predictive-analytics",
         "machine-learning",
         "ai"
       ]
     },
     {
+      "title": "Statistics",
+      "description": "The process of collecting, classifying and analysing data. Many statistical techniques are used in analytics and modern day machine learning.<br><br>For example, calculating the “average” number of patients arriving at a Trust to inform bed managers of capacity requirements or defining how to optimise the performance of an AI model.",
+      "slug": "statistics",
+      "related": [
+        "descriptive-analytics",
+        "predictive-analytics",
+        "prescriptive-analytics",
+        "machine-learning",
+        "unsupervised",
+        "supervised"
+      ]
+    },
+    {
+      "title": "Artificial Intelligence",
+      "description": "The use of digital technology to create systems capable of performing tasks commonly thought to require intelligence.<br><br>For example, an AI system may analyse radiography images and detect tumours in cancer patients.<br><br>In 2021, the UK government announced its <a target='_blank' href='https://www.gov.uk/government/publications/national-ai-strategy'>National AI Strategy</a>.",
+      "slug": "ai",
+      "related": [
+        "machine-learning",
+        "supervised",
+        "unsupervised",
+        "reinforcement",
+        "fairness",
+        "bias",
+        "explainability"
+      ]
+    },
+    {
+      "title": "Algorithm",
+      "description": "A set of instructions that can be followed by a human or computer.<br><br>For example, the NHS <a target='_blank' href='https://www.england.nhs.uk/wp-content/uploads/2014/06/psa-aki-alg.pdf'>algorithm for detecting Acute Kidney Injury</a> is a set of instructions that can be repeated for multiple patients.<br><br>In AI, machine learning algorithms use data to make decisions.",
+      "slug": "algorithm",
+      "related": [
+        "statistics",
+        "ai",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "Data",
+      "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician. A picture can be data, as can audio but we’re struggling to standardise how to represent smell (for the time being).",
+      "slug": "data",
+      "related": [
+        "structured",
+        "unstructured",
+        "database",
+        "model"
+      ]
+    },
+    {
+      "title": "Model",
+      "description": "A model is a simplified representation of something in the real world. In AI, models are the result of an algorithm and data.<br><br>Models are by definition attempts to define real world phenomena, but can be very helpful when trying to assist in decision making.<br><br>For example, an AI model of bed management may use data on past admissions to predict how many patients will arrive at a point in time, and therefore what the best beds are for these patients taking into account future arrivals.",
+      "slug": "model",
+      "related": [
+        "ai",
+        "machine-learning",
+        "algorithm",
+        "data",
+        "mlops"
+      ]
+    },
+    {
+      "title": "Machine learning",
+      "description": "An approach to building models using (normally large amounts of) data. This differs from traditional approaches to building models by defining rules by hand.<br><br>For example, a self-driving car will contain many different machine learning algorithms that have been built using data generated by expert drivers.<br><br>AI used in medical imaging leverages machine learning on images with known conditions.",
+      "slug": "machine-learning",
+      "related": [
+        "ai",
+        "supervised",
+        "unsupervised",
+        "reinforcement",
+        "algorithm",
+        "statistics",
+        "mlops",
+        "data"
+      ]
+    },
+    {
+      "title": "Unsupervised machine learning",
+      "description": "A type of machine learning where you do not know the outcome or definition of your data, and are looking for patterns. This includes clustering techniques such as k-nearest neighbours and principal component analysis (PCA).<br><br>For example, unsupervised machine learning can help identify different groups of hospital patients who use hospital services in different ways.",
+      "slug": "unsupervised",
+      "related": [
+        "supervised",
+        "reinforcement",
+        "statistics",
+        "machine-learning",
+        "ai",
+        "descriptive-analytics"
+      ]
+    },
+    {
+      "title": "Supervised machine learning",
+      "description": "A type of machine learning where you know the outcome of the data you are looking to model. This includes regression and classification techniques.<br><br>For example, an AI to detect Covid-19 in CT scans can use supervised machine learning with a data set of CT scans where patients have a known outcome (e.g. Covid-19 or not), to predict the likelihood of a new patient having Covid-19 from their CT scan (which the model has not seen before).",
+      "slug": "supervised",
+      "related": [
+        "unsupervised",
+        "reinforcement",
+        "statistics",
+        "machine-learning",
+        "ai",
+        "predictive-analytics",
+        "prescriptive-analytics"
+      ]
+    },
+    {
+      "title": "Reinforcement learning",
+      "description": "A type of machine learning where you define an environment and a goal, and iteratively attempt at maximising the goal by reinforcing actions that increase the goal.<br><br>For example, Deepmind successfully used reinforcement learning to master the board game Go by defining the game parameters, the goal and suggesting the best moves to play against real human players.",
+      "slug": "reinforcement",
+      "related": [
+        "ai",
+        "machine-learning",
+        "supervised",
+        "unsupervised"
+      ]
+    },
+    {
+      "title": "Semi-supervised machine learning",
+      "description": "An approach to machine learning that combines known data (supervised machine learning) with unknown data to improve its ability to act on data it has not seen before.<br><br>This approach is being used to improve models where there is not a lot of data available with a known outcome, for example where you may have a rare disease with less data available than in more common diseases.",
+      "slug": "semi-supervised",
+      "related": [
+        "supervised",
+        "unsupervised",
+        "self-supervised",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "Self-supervised machine learning",
+      "description": "An approach to machine learning where you do not have the outcomes of your data, but use the structure of your data to help determine what these outcomes are.<br><br>For example, recent developments in understanding text and audio can use the existing structure to predict what words should come next.",
+      "slug": "self-supervised",
+      "related": [
+        "semi-supervised",
+        "unsupervised",
+        "supervised",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "General AI",
+      "description": "A theoretical concept of AI that is able to generalise, or adapt, to different applications, much like a human or animal.<br><br>For example, if a human learns to drive a car, they could without too much trouble drive other vehicles.",
+      "slug": "general-ai",
+      "related": [
+        "ai",
+        "narrow-ai"
+      ]
+    },
+    {
+      "title": "Narrow AI",
+      "description": "AI focussed on solving a specific problem.<br><br>For example, an AI built to identify cancerous tumours in breast scans, would not automatically be able to detect tumours in other parts of the body without significant rework.",
+      "slug": "narrow-ai",
+      "related": [
+        "ai",
+        "general-ai",
+        "supervised",
+        "reinforcement",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "MLOps",
+      "description": "Machine learning operations is the process of safely deploying, monitoring and updating machine learning models in production, or real-world, environments.<br><br>Because machine learning models are built on data, and data can change, it is important to build resilience into the system so they can adapt to a changing environment.",
+      "slug": "mlops",
+      "related": [
+        "machine-learning",
+        "model"
+      ]
+    },
+    {
+      "title": "Cloud",
+      "description": "An approach to computing where resources are no longer on premise, but hosted in different locations managed by a third-party.<br><Br>For example, a hospital may store patient records on computers physically housed within the hospital, which require maintenance. By moving to the cloud (a marketplace of cloud vendors is established), the hospital can outsource the maintenance and expenditure of physically owning the computers, in return for renting space.<br><br>In 2013 the UK government released its “<a target='_blank' href='https://www.gov.uk/guidance/government-cloud-first-policy'>Cloud First policy</a>”.",
+      "slug": "cloud",
+      "related": [
+        "on-prem",
+        "database"
+      ]
+    },
+    {
+      "title": "On-premise",
+      "description": "An approach to computing where you physically locate your equipment on your premise. For example, a hospital which stores your records within the hospital buildings or nearby in hospital-owned buildings.",
+      "slug": "on-prem",
+      "related": [
+        "database",
+        "cloud"
+      ]
+    },
+    {
+      "title": "Hybrid cloud",
+      "description": "An approach to working with both cloud and on-premise computing resources, where some resources can be on-premise (e.g. data), and other resources can be in the Cloud (e.g. applications that use the data). With a secure connection between the premise and the Cloud you can implement a hybrid cloud.",
+      "slug": "hybrid",
+      "related": [
+        "cloud",
+        "on-prem",
+        "database"
+      ]
+    },
+    {
+      "title": "Python",
+      "description": "A general purpose computer programming language that has become very popular for data science, machine learning and AI. It is free to learn and has a large community of developers who contribute additional features.",
+      "slug": "python",
+      "related": [
+        "R"
+      ]
+    },
+    {
+      "title": "R",
+      "description": "A statistical computer programming language that is commonly used for data analysis and data science. R is free to learn and has a large community of developers who contribute additional features.",
+      "slug": "R",
+      "related": [
+        "python"
+      ]
+    },
+    {
       "title": "API",
-      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
+      "description": "“Application Programming Interface”. A standardised way to share information. An API is much like a shipping container - it implements an agreed structure and mechanism for sharing data, and enables interoperability.",
       "slug": "api",
+      "related": [
+        "database",
+        "cloud",
+        "interoperability",
+        "standard"
+      ]
+    },
+    {
+      "title": "Standard",
+      "description": "An agreed set of definitions, guidelines and sometimes technical approaches for a specific area. Formal Standards may be mandated by the Government, whereas de facto standards are created and used by communities working in that space.<br><br>For example, ISO 13485 is a designated Standard mandated by the UK Government for the development of a medical device. It includes specific guidelines and processes for the safe development of a medical device, and organisations must demonstrate their adherence to the Standard to be allowed to place a medical device on the market.",
+      "slug": "standard",
+      "related": [
+        "interoperability"
+      ]
+    },
+    {
+      "title": "Pseudonymisation",
+      "description": "A technique that separates data from direct identifiers (for example name, surname, NHS number) and replaces them with a pseudonym (for example, a reference number), so that identifying an individual from that data is not possible without additional information. The organisation that conducted pseudonymisation will be able to re-identify individuals if required.",
+      "slug": "pseudonymisation",
+      "related": [
+        "data-protection",
+        "anonymisation"
+      ]
+    },
+    {
+      "title": "Anonymisation",
+      "description": "The process of removing all identifiable information from data in a way which makes it theoretically infeasible to identify an individual.  Anonymised data is not considered as personal data under the GDPR. This means it is not subject to the same restrictions as personal data.<br><br>For example, by removing direct identifiers such as NHS number and name, and translating e.g. age into an age range (25-40) and grouping postcodes together.<br><br>You can read more about the challenges and approaches to anonymisation in the <a target='_blank' href='https://ico.org.uk/media/1061/anonymisation-code.pdf'>ICO code of practice</a>.",
+      "slug": "anonymisation",
+      "related": [
+        "pseudonymisation",
+        "data-protection"
+      ]
+    },
+    {
+      "title": "Data protection",
+      "description": "The principles, legislation and processes to ensure that individuals can trust an organisation to use their data fairly and safely.<br><br>There are three key pieces of legislation that protect the collection, sharing and processing of data within the health and care system: Common Law Duty of Confidentiality, the General Data Protection Regulation (GDPR) and the Data Protection Act 2018 (DPR).",
+      "slug": "data-protection",
+      "related": [
+        "anonymisation",
+        "pseudonymisation"
+      ]
+    },
+    {
+      "title": "EHR",
+      "description": "“Electronic health record”, also known as electronic patient record (EPR) or electronic medical record (EMR), contains the personal health records of an individual in digital format, such as visits to primary and secondary care, prescriptions, diagnoses and clinical notes.",
+      "slug": "ehr",
+      "related": [
+        "database",
+        "cloud",
+        "on-prem",
+        "hybrid"
+      ]
+    },
+    {
+      "title": "Database",
+      "description": "A collection of information or data stored and managed electronically. There are many different types of database depending on the data stored e.g. image data, text data or numerical data.<br><br>For example, your local Trust will manage a database containing your electronic health records (EHR). This database and the software that manages it may be referred to as an EHR system.",
+      "slug": "database",
+      "related": [
+        "data",
+        "structured",
+        "cloud",
+        "on-prem",
+        "hybrid"
+      ]
+    },
+    {
+      "title": "Structured data",
+      "description": "Information which is well structured, such as a spreadsheet of information. This means there are defined columns and you can expect additional data to follow the same or similar structure (perhaps with some missing values).<br><br>Historically, data analysis was limited to structured data as it is well defined. More recently, advances in AI mean unstructured data is now more accessible.",
+      "slug": "structured",
+      "related": [
+        "data",
+        "unstructured",
+        "database"
+      ]
+    },
+    {
+      "title": "Unstructured data",
+      "description": "Information which may have some structure (e.g. a name or some simple attributes or metadata), but by definition could contain a range of information.<br><br>For example, images contain some structured data (image size, image format, image name) but the contents of those images can vary completely. Audio also contains some structure (length, format) but can vary considerably.<br><br>Recent developments in approaches to AI, computational power and quantity of data have led to an increase in AI in unstructured data, such as medical imaging and speech to text.",
+      "slug": "unstructured",
+      "related": [
+        "data",
+        "structured",
+        "database"
+      ]
+    },
+    {
+      "title": "Explainability",
+      "description": "AI can be built on complex algorithms and data, and explainability is a measure of how understandable, or explainable, the decisions of an AI system are to humans.<br><br>For example, an AI may predict which patients are most in need of surgery, but should be able to explain why it has prioritised patients in a certain way.",
+      "slug": "explainability",
+      "related": [
+        "ai",
+        "fairness",
+        "bias",
+        "local-explainability",
+        "general-explainability",
+        "ecological-fallacy"
+      ]
+    },
+    {
+      "title": "Local explainability",
+      "description": "The ability to explain why an AI prediction has been made for a specific data point.<br><br>For example, an AI predicts that you should attend a follow-up appointment in 6 months, and is able to share what factors led to this specific, individual, decision (e.g. date of your last appointment, pre-existing conditions).",
+      "slug": "local-explainability",
+      "related": [
+        "explainability",
+        "ai",
+        "fairness",
+        "bias",
+        "general-explainability"
+      ]
+    },
+    {
+      "title": "General explainability",
+      "description": "Sometimes referred to as global explainability, general explainability is an approach to sharing what features or data points had the most influence over an AI model's predictions.<br><br>For example, in an AI system for predicting length of stay in hospital, age and location were the two most important factors.",
+      "slug": "general-explainability",
+      "related": [
+        "explainability",
+        "ai",
+        "fairness",
+        "bias",
+        "local-explainability"
+      ]
+    },
+    {
+      "title": "Inference",
+      "description": "In AI, inference is the process of making a prediction from a model that has already been trained.<br><br>For example, a hospital may implement a new AI model that can suggest the best bed allocation for an incoming patient. Inference occurs when that new patient arrives, and the system is run to suggest a new allocation.",
+      "slug": "inference",
+      "related": [
+        "ai",
+        "machine-learning",
+        "predictive-analytics",
+        "supervised"
+      ]
+    },
+    {
+      "title": "Training",
+      "description": "Most types of AI require a training process, which uses historical data to build a model able to predict future cases.<br><br>For example, researchers have trained models to predict Covid-19 from patient X-rays using the NCCID database.",
+      "slug": "training",
+      "related": [
+        "machine-learning",
+        "supervised",
+        "training-data",
+        "test-data",
+        "validation-data"
+      ]
+    },
+    {
+      "title": "Causality",
+      "description": "The influence of an event resulting, or causing, another.<br><br>For example, consuming more calories than you use up will lead to weight gain.<br><br>While many AI systems use patterns found in data to make predictions, very rarely are these patterns sufficient to determine the underlying cause of a behaviour.",
+      "slug": "causality",
+      "related": [
+        "correlation",
+        "explainability"
+      ]
+    },
+    {
+      "title": "Correlation",
+      "description": "A measure that expresses the extent to which data are related in a direct, or linear, way. It describes a relationship between data without making any statement about cause and effect (i.e. correlation does not mean causality). However, it can describe a positive or negative, also known as inverse, relationship between these data. Positive would be if one goes up the other goes up too, negative would be if one if one goes up the other one goes down.<br><br>For example, an individual's weight is correlated to their height and waiting times are correlated to the number of people waiting.",
+      "slug": "correlation",
+      "related": [
+        "causality",
+        "unsupervised"
+      ]
+    },
+    {
+      "title": "Ecological fallacy",
+      "description": "It occurs when attributing characteristics of a group to an individual part of that group. In other words, you should not make conclusions about individuals based on findings about the group they belong to.",
+      "slug": "ecological-fallacy",
+      "related": [
+        "explainability"
+      ]
+    },
+    {
+      "title": "Clinical trials",
+      "description": "A formal experiment used to scientifically evaluate the performance of a medicine, technology or process before being approved for widespread use.<br><br>For example, many medicines will undertake a series of trials to demonstrate their effectiveness and safety.<br><br>You can find out more about clinical trials in the UK at the <a target='_blank' href='https://www.nhs.uk/conditions/clinical-trials/'>NHS website</a>.",
+      "slug": "clinical-trials",
+      "related": [
+        "test-data"
+      ]
+    },
+    {
+      "title": "Fairness",
+      "description": "When individuals are not penalised by algorithms because they are part of a (sensitive) group.<br><br>For example, an AI algorithm used in law enforcement in the USA was shown to unfairly increase sentence recommendations based on racial background.",
+      "slug": "fairness",
+      "related": [
+        "bias",
+        "explainability",
+        "ai",
+        "predictive-analytics",
+        "algorithm"
+      ]
+    },
+    {
+      "title": "Bias",
+      "description": "Errors contained in AI which unfairly treat a group of individuals over another.<br><br>AI algorithms are often trained on historical data which can contain bias that exists in society. Unless the algorithms are built with fairness in mind, they may repeat this bias in their predictions.<br><br>For example, an AI trained on CVs from engineers, who are historically predominantly male, may unfairly penalise CVs from women if the algorithms are not tested for fairness and modified to remove bias.",
+      "slug": "bias",
+      "related": [
+        "fairness",
+        "explainability",
+        "ai",
+        "predictive-analytics",
+        "algorithm"
+      ]
+    },
+    {
+      "title": "PoC",
+      "description": "Proof of concept. A demonstration of the feasibility, or possibility, of a technology to be able to perform a task or solve a specific problem. A PoC is an early stage exploration, and would be followed by additional testing and engineering to ensure its viability in a real world setting.<br><br>For example, the <a target='_blank' href='https://www.nhsx.nhs.uk/ai-lab/ai-lab-programmes/skunkworks/'>NHS AI Lab Skunkworks</a> team publishes PoCs on a range of problems, such as using AI to allocate beds or predict length of stay in hospital.",
+      "slug": "poc",
+      "related": [
+        "trl"
+      ]
+    },
+    {
+      "title": "TRL",
+      "description": "Technology readiness level. A <a target='_blank' href='https://en.wikipedia.org/wiki/Technology_readiness_level'>framework</a> developed by NASA to describe the different levels of maturity of a technology.<br><br>For example, a proof of concept may come under TRL level 4.<br><br>TRL levels start at 1 for a basic idea through to 9 for a fully deployed solution.",
+      "slug": "trl",
+      "related": [
+        "poc"
+      ]
+    },
+    {
+      "title": "Training data",
+      "description": "The data required to train, or “teach” a machine learning algorithm when developing a model.<br><br>Good quality training data that is reflective of the population, unbiased and large enough to ensure a robust model is a key prerequisite for AI.",
+      "slug": "training-data",
+      "related": [
+        "test-data",
+        "validation-data",
+        "training",
+        "supervised",
+        "predictive-analytics",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "Test data",
+      "description": "Data that is not included in the training data, and used to test that a model has accurately identified the patterns in the data that result in the desired behaviour.<br><br>For example, the NCCID holds an external validation data set used to test commercial and academic models built to detect Covid-19 from chest X-rays and CT scans.",
+      "slug": "test-data",
+      "related": [
+        "validation-data",
+        "training-data",
+        "supervised",
+        "training",
+        "predictive-analytics",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "Cross validation",
+      "description": "An approach to generating different validation and training data sets from within a single data set, to improve the performance of a predictive model.<br><br>Popular techniques include k-fold cross validation.",
+      "slug": "cross-validation",
+      "related": [
+        "validation-data",
+        "training-data",
+        "training",
+        "supervised",
+        "predictive-analytics",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "Validation data",
+      "description": "Data that is not included in the training data, but is used to improve the performance of an AI model as it is trained.<br><br>This definition relates to the definition within AI, and not the regulatory aspects of medical devices.",
+      "slug": "validation-data",
+      "related": [
+        "test-data",
+        "training-data",
+        "training",
+        "supervised",
+        "predictive-analytics",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "Classification",
+      "description": "A type of machine learning model which can predict whether or not you belong to a specific class, or group. Common approaches include logistic regression, decision trees and random forests.<br><br>For example, a classification model may be built to identify individuals with  diabetes. The classes could be Type-I diabetes, Type-II diabetes, gestational diabetes or no diabetes. Normally, a model would return the probability that you belonged to each class, and would assign you to the class with the highest probability.",
+      "slug": "classification",
+      "related": [
+        "supervised",
+        "ai",
+        "machine-learning",
+        "predictive-analytics",
+        "regression"
+      ]
+    },
+    {
+      "title": "Regression",
+      "description": "A type of machine learning model that predicts a continuous value, instead of a discrete value as is the case in classification models.<br><br>For example, a regression model may predict how long you will stay in a hospital bed upon admission. This value will be a numerical value e.g. 27 hours, or 28 hours.",
+      "slug": "regression",
+      "related": [
+        "supervised",
+        "ai",
+        "machine-learning",
+        "predictive-analytics",
+        "classification"
+      ]
+    },
+    {
+      "title": "Accuracy",
+      "description": "The proportion of correctly identified positive and negative cases in a classification model.<br><br>For example, an AI model that correctly identifies all positive and negative cases of patients with e.g. Covid-19 would have an accuracy of 1.0 (100%).",
+      "slug": "accuracy",
+      "related": [
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "Specificity",
+      "description": "The ability of a classification model to correctly identify individuals <em>without</em> a condition. This is also known as the true negative rate.<br><br>For example, an AI tool that has been developed to detect lung cancer from medical images is said to be specific if it correctly identifies people who do not have lung cancer.",
+      "slug": "specificity",
+      "related": [
+        "accuracy",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "Sensitivity",
+      "description": "The ability of a classification model to correctly identify individuals <em>with</em> a condition. This is also known as the true positive rate and recall. It is defined as the number of true positives over true positives and false negatives.<br><br>For example, an AI tool that has been developed to detect lung cancer from medical images is said to be sensitive if it correctly identifies people who have lung cancer.",
+      "slug": "sensitivity",
+      "related": [
+        "accuracy",
+        "specificity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "False positive",
+      "description": "The incorrect prediction of a data point or individual having a specific outcome or class.<br><br>For example, if an AI tool incorrectly predicts you have diabetes.",
+      "slug": "false-positive",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "False negative",
+      "description": "The incorrect prediction of a data point or individual not having a specific outcome or class.<br><br>For example, if an AI tool incorrectly predicts you do not have diabetes, when in fact, you do.",
+      "slug": "false-negative",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "True positive",
+      "description": "The correct prediction of a data point or individual having a specific outcome or class.<br><br>For example, if an AI tool correctly predicts you have diabetes.",
+      "slug": "true-positive",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "True negative",
+      "description": "The correct prediction of a data point or individual not having a specific outcome or class.<br><br>For example, if an AI tool correctly predicts you do not have diabetes.",
+      "slug": "true-negative",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "Precision",
+      "description": "A way of measuring how effective a classification model is at detecting positive cases. It is the ratio of true positives over all positive cases (true and false positives).<br><br>For example, a model with high precision (1.0) will correctly identify all positive cases. Note this does not account for false negatives, and a high precision could be obtained by assigning every case as a positive case.",
+      "slug": "precision",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "Operating point",
+      "description": "In a classification model, this is the point chosen to define when a case is positive or not. The location of this point will determine the model performance measured by true positives, false positives, true negatives and false negatives.<br><br>For an interactive demonstration on the impact on deciding the operating point, visit this <a target='_blank' href='https://nhsx.github.io/covid-chest-imaging-database/experiments'>NCCID operating point experiment</a>.",
+      "slug": "operating-point",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative"
+      ]
+    },
+    {
+      "title": "ROC",
+      "description": "Receiver Operator Characteristic. Used to create a plotted curve which demonstrates how the trade off between true positive rate and false positive rate changes as you vary the operating point of a classification model.<br><br>For an interactive demonstration of a ROC curve, visit this <a target='_blank' href='https://nhsx.github.io/covid-chest-imaging-database/experiments'>NCCID operating point experiment</a>.",
+      "slug": "roc",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "AUC",
+      "description": "Area Under the (Receiver Operator Character) Curve. A single number calculated from a ROC curve to help summarise the performance of a classification model.",
+      "slug": "auc",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "roc",
+        "f1-score",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "F1 score",
+      "description": "An accuracy metric that combines the precision and recall values for a classification model into a single number, which ranges from 0 (poor accuracy) to 1 (high accuracy).",
+      "slug": "f1-score",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "auc",
+        "roc",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative",
+        "operating-point"
+      ]
+    },
+    {
+      "title": "NCCID",
+      "description": "National COVID-19 Chest Imaging Database. The NCCID is a national database that supports better understanding of COVID-19 and the development of technology enabling the best care for patients hospitalised with a severe infection.",
+      "slug": "nccid",
       "related": [
         "database"
       ]
     },
     {
-      "title": "Database",
-      "description": "Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.",
-      "slug": "database",
+      "title": "Interoperability",
+      "description": "The ability of digital systems to exchange information without requiring significant efforts to convert data from different formats. AI is built on data, and accessing data from different systems requires a level of standardisation and interoperability to ensure a robust model can be built and used.",
+      "slug": "interoperability",
       "related": [
+        "standard",
         "api"
       ]
     }

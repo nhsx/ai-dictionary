@@ -15,7 +15,7 @@
                     "title": {
                         "description": "The AI term",
                         "type": "string",
-                        "minLength": 2
+                        "minLength": 1
                     },
                     "description": {
                         "description": "The explanation of what the AI term is",
@@ -56,7 +56,7 @@
         "slug": {
             "description": "Unique short form identifier for a specific AI term",
             "type": "string",
-            "minLength": 2
+            "minLength": 1
         }
     }
 }
