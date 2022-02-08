@@ -41,16 +41,18 @@ export default function Home() {
    const [keyToggle, setKeyToggle] = useState(false)
    const [currentTermIndex, setCurrentTermIndex] = useState(null)
    const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? titleSearch(searchTerm, terms) : [...terms].sort(titleSort)) : [], [searchTerm])
-   const currentTerm = useMemo(() => currentTermIndex !== null ? filteredTerms[currentTermIndex] : null, [currentTermIndex])
+   const currentTerm = useMemo(() => currentTermIndex !== null ? terms[currentTermIndex] : null, [currentTermIndex])
 
-   // Terms nav 
+   /**
+    * Term navigation 
+    */
    const onPrev = () => showTerm && setCurrentTermIndex((currentTermIndex - 1) < 0 ? (terms.length - 1) : (currentTermIndex - 1))
    const onNext = () => showTerm && setCurrentTermIndex((currentTermIndex + 1) >= terms.length ? 0 : (currentTermIndex + 1))
 
    // On slug change
    useEffect(() => {
       if (currentTermSlug) {
-         setCurrentTermIndex(filteredTerms.findIndex(term => term.slug === currentTermSlug))
+         setCurrentTermIndex(terms.findIndex(term => term.slug === currentTermSlug))
       }
    }, [currentTermSlug])
 
@@ -75,27 +77,43 @@ export default function Home() {
       setKeyToggle(!keyToggle)
    }
 
-   // Detect current term from URL 
+   /**
+    * Preload term on page load if we have a query param
+    */
    useEffect(() => {
       if (router.query.term) {
-         const matchedIndex = terms.findIndex((term) => term.slug === router.query.term)
-         if (matchedIndex) setCurrentTermSlug(terms[matchedIndex].slug)
+         selectTermBySlug(router.query.term)
       }
-   }, [])
+   }, [router])
 
-   // Show selected term on select
+   /**
+    * Rewrite URL on term change 
+    */
    useEffect(() => {
-      if (currentTerm && !showTerm) setShowTerm(true)
-      router.push(currentTerm ? { pathname: '/', query: { term: currentTerm.slug } } : '/', undefined, { shallow: true })
-   }, [currentTerm])
+      if (!showTerm) router.replace({ pathname: '/', query: null })
+      else if (router.query.term !== currentTerm.slug) router.replace({ pathname: '/', query: { term: currentTerm.slug } })
+   }, [currentTerm, showTerm])
 
-   // Watch for key input 
+   /**
+    * Detect key presses
+    */
    useEffect(() => {
       window.addEventListener("keydown", handleKeyInput)
       return () => {
          window.removeEventListener("keydown", handleKeyInput)
       };
    }, [showTerm, keyToggle])
+
+   /**
+    * Select term by slug 
+    */
+   const selectTermBySlug = (slug) => {
+      const matchingIndex = terms.findIndex((term) => term.slug === slug)
+      if (matchingIndex >= 0) {
+         setCurrentTermIndex(matchingIndex)
+         setShowTerm(true)
+      }
+   }
 
    return (
 
@@ -108,7 +126,7 @@ export default function Home() {
             onClose={() => setShowTerm(false)}
             onNext={onNext}
             onPrev={onPrev}
-            onSelectTermSlug={(slug) => { setCurrentTermSlug(slug); setShowTerm(true) }}
+            onSelectTermSlug={selectTermBySlug}
          />
 
          <div className="min-h-screen lg:h-screen flex flex-col">
@@ -117,7 +135,7 @@ export default function Home() {
             <Header searchTerm={searchTerm} searchRef={searchRef} setSearchTerm={setSearchTerm} />
 
             {/* Main content */}
-            <TermList terms={filteredTerms} isShowingTerm={showTerm} onSelectTermSlug={(slug) => { setCurrentTermSlug(slug); setShowTerm(true) }} />
+            <TermList terms={filteredTerms} isShowingTerm={showTerm} onSelectTermSlug={selectTermBySlug} />
 
             {/* Footer */}
             <Footer />
