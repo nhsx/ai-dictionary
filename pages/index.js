@@ -81,8 +81,8 @@ export default function Home() {
     * Rewrite URL on term change 
     */
    useEffect(() => {
-      router.push( (showTerm && currentTerm) ? { pathname: '/', query: { term: currentTerm.slug }} : '/', undefined, { shallow: true })
-   }, [currentTerm, showTerm])
+      router.push( (showTerm && currentTerm) ? { pathname: '/', query: { term: currentTerm.slug, shallow: true }} : '/', undefined)
+   }, [showTerm])
 
    /**
     * Detect key presses
