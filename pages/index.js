@@ -32,6 +32,7 @@ export default function Home() {
 
    // Shared state
    const terms = useRecoilValue(termsState)
+   const [currentTermSlug, setCurrentTermSlug] = useRecoilState(currentTermSlugState)
 
    // Local state 
    const searchRef = useRef(null)
@@ -40,7 +41,7 @@ export default function Home() {
    const [keyToggle, setKeyToggle] = useState(false)
    const [currentTermIndex, setCurrentTermIndex] = useState(null)
    const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? titleSearch(searchTerm, terms) : [...terms].sort(titleSort)) : [], [searchTerm])
-   const currentTerm = useMemo(() => currentTermIndex !== null ? filteredTerms[currentTermIndex] : null, [currentTermIndex])
+   const currentTerm = useMemo(() => currentTermIndex !== null ? terms[currentTermIndex] : null, [currentTermIndex])
 
    /**
     * Term navigation 
@@ -51,7 +52,7 @@ export default function Home() {
    // On slug change
    useEffect(() => {
       if (currentTermSlug) {
-         setCurrentTermIndex(filteredTerms.findIndex(term => term.slug === currentTermSlug))
+         setCurrentTermIndex(terms.findIndex(term => term.slug === currentTermSlug))
       }
    }, [currentTermSlug])
 
@@ -77,12 +78,11 @@ export default function Home() {
    }
 
    /**
-    * Load term on page load if we have a query param
+    * Preload term on page load if we have a query param
     */
    useEffect(() => {
       if (router.query.term) {
-         const matchedIndex = terms.findIndex((term) => term.slug === router.query.term)
-         if (matchedIndex) setCurrentTermSlug(terms[matchedIndex].slug)
+         selectTermBySlug(router.query.term)
       }
    }, [router])
 
@@ -90,9 +90,9 @@ export default function Home() {
     * Rewrite URL on term change 
     */
    useEffect(() => {
-      if (currentTerm && !showTerm) setShowTerm(true)
-      router.push(currentTerm ? { pathname: '/', query: { term: currentTerm.slug } } : '/', undefined)
-   }, [showTerm])
+      if (!showTerm) router.replace({ pathname: '/', query: null })
+      else if (router.query.term !== currentTerm.slug) router.replace({ pathname: '/', query: { term: currentTerm.slug } })
+   }, [currentTerm, showTerm])
 
    /**
     * Detect key presses
@@ -109,7 +109,7 @@ export default function Home() {
     */
    const selectTermBySlug = (slug) => {
       const matchingIndex = terms.findIndex((term) => term.slug === slug)
-      if(matchingIndex >= 0) { 
+      if (matchingIndex >= 0) {
          setCurrentTermIndex(matchingIndex)
          setShowTerm(true)
       }
