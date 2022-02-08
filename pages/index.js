@@ -10,7 +10,11 @@ import Header from "components/Header"
 /**
  * Sort by title property 
  */
-const titleSort = (a, b) => a.title > b.title
+const titleSort = (a, b) => {
+   if (a.title < b.title) return -1
+   if (b.title < a.title) return 1
+   return 0
+}
 
 /**
  * Find search query in term titles 
@@ -44,10 +48,14 @@ export default function Home() {
    const onPrev = () => showTerm && setCurrentTermIndex((currentTermIndex - 1) < 0 ? (terms.length - 1) : (currentTermIndex - 1))
    const onNext = () => showTerm && setCurrentTermIndex((currentTermIndex + 1) >= terms.length ? 0 : (currentTermIndex + 1))
 
-   /**
-    * Handle keyboard input 
-    * @param {*} e 
-    */
+   // On slug change
+   useEffect(() => {
+      if (currentTermSlug) {
+         setCurrentTermIndex(filteredTerms.findIndex(term => term.slug === currentTermSlug))
+      }
+   }, [currentTermSlug])
+
+   // Handle keyboard input 
    function handleKeyInput(e) {
       if (e.key === 'ArrowLeft') {
          onPrev()
@@ -73,7 +81,8 @@ export default function Home() {
     */
    useEffect(() => {
       if (router.query.term) {
-         selectTermBySlug(router.query.term)
+         const matchedIndex = terms.findIndex((term) => term.slug === router.query.term)
+         if (matchedIndex) setCurrentTermSlug(terms[matchedIndex].slug)
       }
    }, [router])
 
@@ -81,7 +90,8 @@ export default function Home() {
     * Rewrite URL on term change 
     */
    useEffect(() => {
-      router.push( (showTerm && currentTerm) ? { pathname: '/', query: { term: currentTerm.slug, shallow: true }} : '/', undefined)
+      if (currentTerm && !showTerm) setShowTerm(true)
+      router.push(currentTerm ? { pathname: '/', query: { term: currentTerm.slug } } : '/', undefined)
    }, [showTerm])
 
    /**
