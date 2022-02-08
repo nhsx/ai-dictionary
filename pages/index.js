@@ -10,14 +10,18 @@ import Header from "components/Header"
 /**
  * Sort by title property 
  */
-const titleSort = (a, b) => a.title > b.title
+const titleSort = (a, b) => {
+   if (a.title < b.title) return -1
+   if (b.title < a.title) return 1
+   return 0
+}
 
 /**
  * Find search query in term titles 
  */
-const titleSearch = (search, terms) => terms.filter(term => 
+const titleSearch = (search, terms) => terms.filter(term =>
    term.title.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-   term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 || 
+   term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
    term.slug.toLowerCase().indexOf(search.toLowerCase()) > -1
 ).sort(titleSort)
 
@@ -45,7 +49,7 @@ export default function Home() {
 
    // On slug change
    useEffect(() => {
-      if(currentTermSlug) {
+      if (currentTermSlug) {
          setCurrentTermIndex(filteredTerms.findIndex(term => term.slug === currentTermSlug))
       }
    }, [currentTermSlug])
@@ -73,16 +77,16 @@ export default function Home() {
 
    // Detect current term from URL 
    useEffect(() => {
-      if(router.query.term) {
+      if (router.query.term) {
          const matchedIndex = terms.findIndex((term) => term.slug === router.query.term)
-         if(matchedIndex) setCurrentTermSlug(terms[matchedIndex].slug)
+         if (matchedIndex) setCurrentTermSlug(terms[matchedIndex].slug)
       }
    }, [])
 
    // Show selected term on select
    useEffect(() => {
       if (currentTerm && !showTerm) setShowTerm(true)
-      router.push( currentTerm ? { pathname: '/', query: { term: currentTerm.slug }} : '/', undefined, { shallow: true })
+      router.push(currentTerm ? { pathname: '/', query: { term: currentTerm.slug } } : '/', undefined, { shallow: true })
    }, [currentTerm])
 
    // Watch for key input 
@@ -102,7 +106,7 @@ export default function Home() {
             {...currentTerm}
             isOpen={showTerm}
             onClose={() => setShowTerm(false)}
-            onNext={onNext} 
+            onNext={onNext}
             onPrev={onPrev}
             onSelectTermSlug={(slug) => { setCurrentTermSlug(slug); setShowTerm(true) }}
          />
