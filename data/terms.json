@@ -72,7 +72,7 @@
     },
     {
       "title": "Data",
-      "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician. A picture can be data, as can audio but we’re struggling to standardise how to represent smell (for the time being).",
+      "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician. A picture can be data, as can audio but we are struggling to standardise how to represent smell (for the time being).",
       "slug": "data",
       "related": [
         "structured",
@@ -228,7 +228,7 @@
     },
     {
       "title": "Python",
-      "description": "A general purpose computer programming language that has become very popular for data science, machine learning and AI. It is free to learn and has a large community of developers who contribute additional features.",
+      "description": "A general purpose computer programming language that has become very popular for data science, machine learning and AI. It is free to learn and has a large community of developers who contribute additional features.<br><br>There is a thriving <a target='_blank' href='https://nhs-pycom.net/'>NHS Python Community for Healthcare</a>.",
       "slug": "python",
       "related": [
         "R"
@@ -236,7 +236,7 @@
     },
     {
       "title": "R",
-      "description": "A statistical computer programming language that is commonly used for data analysis and data science. R is free to learn and has a large community of developers who contribute additional features.",
+      "description": "A statistical computer programming language that is commonly used for data analysis and data science. R is free to learn and has a large community of developers who contribute additional features.<br><br>There is a thriving <a target='_blank' href='https://nhsrcommunity.com/'>NHS-R Community</a>.",
       "slug": "R",
       "related": [
         "python"
