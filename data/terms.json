@@ -773,6 +773,14 @@
         "standard",
         "api"
       ]
+    },
+    {
+      "title": "Multimodal AI",
+      "description": "An AI that brings different facets (smaller AI models or data verticals) of the target together to form a more complete predictor. <br><br>In healthcare, the term is also associated with specific 'modalities' of data, such as the sequences in mpMRI scanning. However, the concept of multimodality with respect to AI is more than just bringing different data verticals together - it is about how very different AI models effectively interoperate - even 'merge' - to create a whole that is greater than the sum of its parts."
+      "slug": "multimodality"
+      "related": [
+        "model"
+      ]
     }
   ]
 }
