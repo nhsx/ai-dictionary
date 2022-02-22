@@ -509,7 +509,7 @@
     },
     {
       "title": "Validation data",
-      "description": "Data that is not included in the training data, but is used to improve the performance of an AI model as it is trained.<br><br>This definition relates to the definition within AI, and not the regulatory aspects of medical devices.",
+      "description": "Data that is not included in the training data, but is used to check the performance of the model as it is being trained. This is separate to the test data used to check the final performance of the model.<br><br>This definition relates to the definition within AI, and not the regulatory aspects of medical devices.",
       "slug": "validation-data",
       "related": [
         "test-data",
