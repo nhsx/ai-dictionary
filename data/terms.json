@@ -191,7 +191,7 @@
     },
     {
       "title": "MLOps",
-      "description": "Machine learning operations is the process of safely deploying, monitoring and updating machine learning models in production, or real-world, environments.<br><br>Because machine learning models are built on data, and data can change, it is important to build resilience into the system so they can adapt to a changing environment.",
+      "description": "Machine learning operations is the process of safely deploying, monitoring and updating machine learning models in production, or real-world, environments.<br><br>Because machine learning models are built on data, and data can change, it is important to build robustness into the system so they can adapt to a changing environment without losing performance.",
       "slug": "mlops",
       "related": [
         "machine-learning",
