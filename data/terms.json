@@ -244,7 +244,7 @@
     },
     {
       "title": "API",
-      "description": "“Application Programming Interface”. A standardised way to share information. An API is much like a shipping container - it implements an agreed structure and mechanism for sharing data, and enables interoperability.",
+      "description": "Application Programming Interface. A standardised way to share data. An API defines the mechanisms to receive and send data, which is agnostic to how the underlying data is stored.<br><br>For example, NHS Digital has a <a target='_blank' href='https://digital.nhs.uk/developer/api-catalogue'>number of APIs</a> available to help build modern healthcare technology.",
       "slug": "api",
       "related": [
         "database",
