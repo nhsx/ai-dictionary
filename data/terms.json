@@ -783,26 +783,6 @@
         "machine-learning",
         "ai"
       ]
-    },
-    {
-      "title": "Neural network",
-      "description": "Neural networks are an approach to machine learning, loosely inspired by nature, that can describe complex relationships using a broader range of data than traditional approaches.<br><br>For example, neural networks can be trained on image data to describe features in medical images such as tumours. They can also be trained on free text such as clinical notes, allowing their use in clinical coding applications.<br><br>Neural networks can also be trained on tabulated, or structured data, such as a spreadsheet. Their ability to model complexity often comes at the cost of explainability, whereby the more complex the model, the harder to explain it becomes.",
-      "slug": "neural-network",
-      "related": [
-        "model",
-        "machine-learning",
-        "deep-learning",
-        "structured",
-        "unstructured",
-        "supervised",
-        "explainability"
-      ]
-    },
-    {
-      "title": "Deep learning",
-      "description": "",
-      "slug": "deep-learning",
-      "related": []
     }
   ]
 }
