@@ -72,7 +72,7 @@
     },
     {
       "title": "Data",
-      "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician. A picture can be data, as can audio but we are struggling to standardise how to represent smell (for the time being).",
+      "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician.<br><br>Imaging data is a common type of healthcare data, which includes data generated from X-ray machines, CT scanners, MRI scanners, OCT systems etc.",
       "slug": "data",
       "related": [
         "structured",
