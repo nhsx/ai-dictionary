@@ -806,6 +806,7 @@
       "related": [
         "neural-network",
         "machine-learning",
+        "transformer",
         "supervised",
         "ai",
         "explainability"
@@ -846,6 +847,30 @@
         "training",
         "model",
         "machine-learning"
+      ]
+    },
+    {
+      "title": "NLP",
+      "description": "Natural language processing. A collection of techniques which use speech and text data.<br><br>Speech-to-text systems convert verbal speech to text, such as in a smart speaker.<br>Natural language understanding systems convert text into concepts or instructions, such as your requests to play music or offer directions.<br>Text-to-speech systems convert text into verbal speech, such as responses from a smart speaker.<br>Natural language generation will create human-like text based on concepts, such as writing a report from a summary table of data.<br><br>NLP has developed significantly in recent years in part due to the availability of deep learning algorithms and transfomers.",
+      "slug": "nlp",
+      "related": [
+        "deep-learning",
+        "transformer",
+        "neural-network",
+        "machine-learning",
+        "supervised",
+        "ai"
+      ]
+    },
+    {
+      "title": "Transformer",
+      "description": "An approach to deep learning which uses an 'attention' mechanism to understand context in text or image data, without requiring data to be processed in order.<br><br>Transformers have led to recent breakthroughs in NLP and computer vision.",
+      "slug": "transformer",
+      "related": [
+        "nlp",
+        "deep-learning",
+        "machine-learning",
+        "ai"
       ]
     }
   ]
