@@ -744,19 +744,15 @@
     },
     {
       "title": "F1 score",
-      "description": "An accuracy metric that combines the precision and recall values for a classification model into a single number, which ranges from 0 (poor accuracy) to 1 (high accuracy).",
+      "description": "A metric which describes the accuracy of a classification model, by combining the precision and sensitivity (recall) values into a single number, which ranges from 0 (poor accuracy) to 1 (high accuracy).",
       "slug": "f1-score",
       "related": [
-        "accuracy",
-        "specificity",
-        "sensitivity",
         "precision",
-        "auc",
-        "roc",
+        "sensitivity",
+        "accuracy",
         "false-positive",
         "false-negative",
         "true-positive",
-        "true-negative",
         "operating-point"
       ]
     },
