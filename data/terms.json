@@ -72,7 +72,7 @@
     },
     {
       "title": "Data",
-      "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician. A picture can be data, as can audio but we are struggling to standardise how to represent smell (for the time being).",
+      "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician.<br><br>Imaging data is a common type of healthcare data, which includes data generated from X-ray machines, CT scanners, MRI scanners, OCT systems etc.",
       "slug": "data",
       "related": [
         "structured",
@@ -191,7 +191,7 @@
     },
     {
       "title": "MLOps",
-      "description": "Machine learning operations is the process of safely deploying, monitoring and updating machine learning models in production, or real-world, environments.<br><br>Because machine learning models are built on data, and data can change, it is important to build resilience into the system so they can adapt to a changing environment.",
+      "description": "Machine learning operations is the process of safely deploying, monitoring and updating machine learning models in production, or real-world, environments.<br><br>Because machine learning models are built on data, and data can change, it is important to build robustness into the system so they can adapt to a changing environment without losing performance.",
       "slug": "mlops",
       "related": [
         "machine-learning",
@@ -244,7 +244,7 @@
     },
     {
       "title": "API",
-      "description": "“Application Programming Interface”. A standardised way to share information. An API is much like a shipping container - it implements an agreed structure and mechanism for sharing data, and enables interoperability.",
+      "description": "Application Programming Interface. A standardised way to share data. An API defines the mechanisms to receive and send data, which is agnostic to how the underlying data is stored.<br><br>For example, NHS Digital has a <a target='_blank' href='https://digital.nhs.uk/developer/api-catalogue'>number of APIs</a> available to help build modern healthcare technology.",
       "slug": "api",
       "related": [
         "database",
@@ -388,7 +388,9 @@
         "supervised",
         "training-data",
         "test-data",
-        "validation-data"
+        "validation-data",
+        "underfitting",
+        "overfitting"
       ]
     },
     {
@@ -472,6 +474,7 @@
       "related": [
         "test-data",
         "validation-data",
+        "data-augmentation",
         "training",
         "supervised",
         "predictive-analytics",
@@ -493,11 +496,13 @@
     },
     {
       "title": "Cross validation",
-      "description": "An approach to generating different validation and training data sets from within a single data set, to improve the performance of a predictive model.<br><br>Popular techniques include k-fold cross validation.",
+      "description": "An approach to reducing overfitting during model development, by iteratively selecting different portions of the data to train and validate a predictive (supervised) machine learning model.<br><br>Cross validation can increase the overall performance of a model, along with data augmentation techniques.",
       "slug": "cross-validation",
       "related": [
-        "validation-data",
         "training-data",
+        "validation-data",
+        "overfitting",
+        "data-augmentation",
         "training",
         "supervised",
         "predictive-analytics",
@@ -506,7 +511,7 @@
     },
     {
       "title": "Validation data",
-      "description": "Data that is not included in the training data, but is used to improve the performance of an AI model as it is trained.<br><br>This definition relates to the definition within AI, and not the regulatory aspects of medical devices.",
+      "description": "Data that is not included in the training data, but is used to check the performance of the model as it is being trained. This is separate to the test data used to check the final performance of the model.<br><br>This definition relates to the definition within AI, and not the regulatory aspects of medical devices.",
       "slug": "validation-data",
       "related": [
         "test-data",
@@ -741,19 +746,15 @@
     },
     {
       "title": "F1 score",
-      "description": "An accuracy metric that combines the precision and recall values for a classification model into a single number, which ranges from 0 (poor accuracy) to 1 (high accuracy).",
+      "description": "A metric which describes the accuracy of a classification model, by combining the precision and sensitivity (recall) values into a single number, which ranges from 0 (poor accuracy) to 1 (high accuracy).",
       "slug": "f1-score",
       "related": [
-        "accuracy",
-        "specificity",
-        "sensitivity",
         "precision",
-        "auc",
-        "roc",
+        "sensitivity",
+        "accuracy",
         "false-positive",
         "false-negative",
         "true-positive",
-        "true-negative",
         "operating-point"
       ]
     },
