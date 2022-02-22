@@ -496,11 +496,13 @@
     },
     {
       "title": "Cross validation",
-      "description": "An approach to generating different validation and training data sets from within a single data set, to improve the performance of a predictive model.<br><br>Popular techniques include k-fold cross validation.",
+      "description": "An approach to reducing overfitting during model development, by iteratively selecting different portions of the data to train and validate a predictive (supervised) machine learning model.<br><br>Cross validation can increase the overall performance of a model, along with data augmentation techniques.",
       "slug": "cross-validation",
       "related": [
-        "validation-data",
         "training-data",
+        "validation-data",
+        "overfitting",
+        "data-augmentation",
         "training",
         "supervised",
         "predictive-analytics",
