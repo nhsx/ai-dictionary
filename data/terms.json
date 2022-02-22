@@ -776,7 +776,7 @@
     },
     {
       "title": "Multimodal AI",
-      "description": "An approach to AI which incorporates multiple types of data. For example, a speech-to-text model that is typically trained on audio and text data, could include image data of lip movements taken from video recordings.<br><br>Multimodal AI can combine both numerical data such as blood pressure, heart rate, and imaging data such as a CT scan.<br><br>In healthcare, the term is also associated with specific 'modalities' of data, such as the sequences in mpMRI scanning. However, the concept of multimodality with respect to AI is more than just bringing different types of data together - it is about how very different AI models effectively interoperate - even 'merge' - to create a whole that is greater than the sum of its parts.",
+      "description": "An approach to AI which incorporates multiple types of data. For example, a speech-to-text model that is typically trained on audio and text data, could include image data of lip movements taken from video recordings.<br><br>Multimodal AI can combine both numerical data such as blood pressure, heart rate, and imaging data such as a CT scan.<br><br>In healthcare, the term is also associated with specific 'modalities' of data, such as the sequences in <a target='_blank' href='https://prostatecanceruk.org/about-us/projects-and-policies/mpmri'>mpMRI</a> scanning. However, the concept of multimodality with respect to AI is more than just bringing different types of data together - it is about how very different AI models effectively interoperate - even 'merge' - to create a whole that is greater than the sum of its parts.",
       "slug": "multimodal",
       "related": [
         "model",
