@@ -809,6 +809,43 @@
         "ai",
         "explainability"
       ]
+    },
+    {
+      "title": "Overfitting",
+      "description": "The process of building a model which is based too closely on the data. This results in a model which may be very accurate on the training data, but when tested on additional datasets such as the test data, unseen data or data from a new environment, performs badly.<br><br>Approaches to reduce overfitting include cross-validation, data augmentation and ensemble techniques (which combine different models).",
+      "slug": "overfitting",
+      "related": [
+        "underfitting",
+        "machine-learning",
+        "bias",
+        "model",
+        "training-data",
+        "test-data",
+        "cross-validation",
+        "data-augmentation"
+      ]
+    },
+    {
+      "title": "Underfitting",
+      "description": "The process of building a model which is not based closely enough on the data. This results in a model which performs badly and fails to capture the relationships you are looking for.<br><br>There is a balance to be made between underfitting and overfitting.",
+      "slug": "underfitting",
+      "related": [
+        "overfitting",
+        "machine-learning",
+        "model",
+        "training-data"
+      ]
+    },
+    {
+      "title": "Data augmentation",
+      "description": "The process of artificially increasing the amount of data used to train a model, to reduce overfitting and improve model performance.<br><br>Commonly used in imaging applications, this can include rotating, cropping, adding noise or random levels of blur to existing images.",
+      "slug": "data-augmentation",
+      "related": [
+        "overfitting",
+        "training",
+        "model",
+        "machine-learning"
+      ]
     }
   ]
 }
