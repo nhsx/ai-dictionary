@@ -747,7 +747,7 @@
     },
     {
       "title": "F1 score",
-      "description": "A metric which describes the accuracy of a classification model, by combining the precision and sensitivity (recall) values into a single number, which ranges from 0 (poor accuracy) to 1 (high accuracy).",
+      "description": "A measure which describes the accuracy of a classification model, by combining the precision and sensitivity (recall) values into a single number, which ranges from 0 (poor accuracy) to 1 (high accuracy).",
       "slug": "f1-score",
       "related": [
         "precision",
@@ -872,6 +872,21 @@
         "deep-learning",
         "machine-learning",
         "ai"
+      ]
+    },
+    {
+      "title": "Confusion matrix",
+      "description": "A table that is used to describe the performance of a classification model on a set of test data for which the true values are known. It can be used to derive a number of measures such as sensitivity and specificity.<br><br>For example, a model may predict whether a patient has a form of diabetes, or not. It's performance can be described by writing out where it correctly or incorrectly predicted diabetes (positive) or not (negative) where we know the actual results:<br><br><table><thead><tr><th colspan='2' rowspan='2'></th><th colspan='2'>Predicted</th></tr><tr><th>Positive</th><th>Negative</th></tr></thead><tbody><tr><td rowspan='2'>Actual</td><td>Positive</td><td>True positive</td><td>False negative</td></tr><tr><td>Negative</td><td>False positive</td><td>True negative</td></tr></tbody></table>",
+      "slug": "confusion-matrix",
+      "related": [
+        "accuracy",
+        "specificity",
+        "sensitivity",
+        "precision",
+        "false-positive",
+        "false-negative",
+        "true-positive",
+        "true-negative"
       ]
     }
   ]
