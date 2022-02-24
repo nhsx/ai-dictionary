@@ -83,7 +83,7 @@
     },
     {
       "title": "Model",
-      "description": "A model is a simplified representation of something in the real world. In AI, models are the result of an algorithm and data.<br><br>Models are by definition attempts to define real world phenomena, but can be very helpful when trying to assist in decision making.<br><br>For example, an AI model of bed management may use data on past admissions to predict how many patients will arrive at a point in time, and therefore what the best beds are for these patients taking into account future arrivals.",
+      "description": "A model is a simplified representation of something in the real world. In AI, models are the result of an algorithm and data.<br><br>Models are by definition attempts to define real world phenomena, and can be very helpful when trying to assist in decision making.<br><br>For example, an AI model of bed management may use data on past admissions to predict how many patients will arrive at a point in time, and therefore what the best beds are for these patients taking into account future arrivals.",
       "slug": "model",
       "related": [
         "ai",
@@ -105,7 +105,8 @@
         "algorithm",
         "statistics",
         "mlops",
-        "data"
+        "data",
+        "model"
       ]
     },
     {
