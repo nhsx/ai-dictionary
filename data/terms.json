@@ -256,7 +256,7 @@
     },
     {
       "title": "Standard",
-      "description": "An agreed set of definitions, guidelines and sometimes technical approaches for a specific area. Formal Standards may be mandated by the Government, whereas de facto standards are created and used by communities working in that space.<br><br>For example, ISO 13485 is a designated Standard mandated by the UK Government for the development of a medical device. It includes specific guidelines and processes for the safe development of a medical device, and organisations must demonstrate their adherence to the Standard to be allowed to place a medical device on the market.",
+      "description": "An agreed set of definitions, guidelines and sometimes technical approaches for a specific area. Formal Standards may be mandated by the Government, whereas de facto standards are created and used by communities working in that space.<br><br>For example, ISO 13485 is a UK <a target='_blank' href='https://www.gov.uk/guidance/designated-standards#healthcare-engineering'>Designated Standard</a> for quality management systems for medical device, it can be used to <a target='_blank' href='https://www.gov.uk/guidance/medical-devices-conformity-assessment-and-the-ukca-mark#compliance-with-designated-standards'>demonstrate conformance</a> with parts of the medical device regulations.",
       "slug": "standard",
       "related": [
         "interoperability"
