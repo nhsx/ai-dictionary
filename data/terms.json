@@ -47,8 +47,9 @@
       ]
     },
     {
-      "name": "AI",
-      "description": "Artificial Intelligence. The use of digital technology to create systems capable of performing tasks commonly thought to require intelligence.<br><br>For example, an AI system may analyse radiography images and detect tumours in cancer patients.<br><br>In 2021, the UK government announced its <a target='_blank' href='https://www.gov.uk/government/publications/national-ai-strategy'>National AI Strategy</a>.",
+      "name": "Artificial Intelligence",
+      "acronym": "AI",
+      "description": "The use of digital technology to create systems capable of performing tasks commonly thought to require intelligence.<br><br>For example, an AI system may analyse radiography images and detect tumours in cancer patients.<br><br>In 2021, the UK government announced its <a target='_blank' href='https://www.gov.uk/government/publications/national-ai-strategy'>National AI Strategy</a>.",
       "termCode": "ai",
       "related": [
         "machine-learning",
@@ -170,7 +171,8 @@
       ]
     },
     {
-      "name": "General AI",
+      "name": "General artificial intelligence",
+      "acronym": "General AI",
       "description": "A theoretical concept of AI that is able to generalise, or adapt, to different applications, much like a human or animal.<br><br>For example, if a human learns to drive a car, they could without too much trouble drive other vehicles.",
       "termCode": "general-ai",
       "related": [
@@ -179,7 +181,8 @@
       ]
     },
     {
-      "name": "Narrow AI",
+      "name": "Narrow artificial intelligence",
+      "acronym": "Narrow AI",
       "description": "AI focussed on solving a specific problem.<br><br>For example, an AI built to identify cancerous tumours in breast scans, would not automatically be able to detect tumours in other parts of the body without significant rework.",
       "termCode": "narrow-ai",
       "related": [
@@ -191,8 +194,9 @@
       ]
     },
     {
-      "name": "MLOps",
-      "description": "Machine learning operations is the process of safely deploying, monitoring and updating machine learning models in production, or real-world, environments.<br><br>Because machine learning models are built on data, and data can change, it is important to build robustness into the system so they can adapt to a changing environment without losing performance.",
+      "name": "Machine learning operations",
+      "acronym": "MLOps",
+      "description": "The process of safely deploying, monitoring and updating machine learning models in production, or real-world, environments.<br><br>Because machine learning models are built on data, and data can change, it is important to build robustness into the system so they can adapt to a changing environment without losing performance.",
       "termCode": "mlops",
       "related": [
         "machine-learning",
@@ -244,8 +248,9 @@
       ]
     },
     {
-      "name": "API",
-      "description": "Application Programming Interface. A standardised way to share data. An API defines the mechanisms to receive and send data, which is agnostic to how the underlying data is stored.<br><br>For example, NHS Digital has a <a target='_blank' href='https://digital.nhs.uk/developer/api-catalogue'>number of APIs</a> available to help build modern healthcare technology.",
+      "name": "Application programming interface",
+      "acronym": "API",
+      "description": "A standardised way to share data. An API defines the mechanisms to receive and send data, which is agnostic to how the underlying data is stored.<br><br>For example, NHS Digital has a <a target='_blank' href='https://digital.nhs.uk/developer/api-catalogue'>number of APIs</a> available to help build modern healthcare technology.",
       "termCode": "api",
       "related": [
         "database",
@@ -290,8 +295,9 @@
       ]
     },
     {
-      "name": "EHR",
-      "description": "“Electronic health record”, also known as electronic patient record (EPR) or electronic medical record (EMR), contains the personal health records of an individual in digital format, such as visits to primary and secondary care, prescriptions, diagnoses and clinical notes.",
+      "name": "Electronic health record",
+      "acronym": "EHR",
+      "description": "Also known as electronic patient record (EPR) or electronic medical record (EMR), contains the personal health records of an individual in digital format, such as visits to primary and secondary care, prescriptions, diagnoses and clinical notes.",
       "termCode": "ehr",
       "related": [
         "database",
@@ -453,16 +459,18 @@
       ]
     },
     {
-      "name": "PoC",
-      "description": "Proof of concept. A demonstration of the feasibility, or possibility, of a technology to be able to perform a task or solve a specific problem. A PoC is an early stage exploration, and would be followed by additional testing and engineering to ensure its viability in a real world setting.<br><br>For example, the <a target='_blank' href='https://www.nhsx.nhs.uk/ai-lab/ai-lab-programmes/skunkworks/'>NHS AI Lab Skunkworks</a> team publishes PoCs on a range of problems, such as using AI to allocate beds or predict length of stay in hospital.",
+      "name": "Proof of concept",
+      "acronym": "PoC",
+      "description": "A demonstration of the feasibility, or possibility, of a technology to be able to perform a task or solve a specific problem. A PoC is an early stage exploration, and would be followed by additional testing and engineering to ensure its viability in a real world setting.<br><br>For example, the <a target='_blank' href='https://www.nhsx.nhs.uk/ai-lab/ai-lab-programmes/skunkworks/'>NHS AI Lab Skunkworks</a> team publishes PoCs on a range of problems, such as using AI to allocate beds or predict length of stay in hospital.",
       "termCode": "poc",
       "related": [
         "trl"
       ]
     },
     {
-      "name": "TRL",
-      "description": "Technology readiness level. A <a target='_blank' href='https://en.wikipedia.org/wiki/Technology_readiness_level'>framework</a> developed by NASA to describe the different levels of maturity of a technology.<br><br>For example, a proof of concept may come under TRL level 4.<br><br>TRL levels start at 1 for a basic idea through to 9 for a fully deployed solution.",
+      "name": "Technology readiness level",
+      "acronym": "TRL",
+      "description": "A <a target='_blank' href='https://en.wikipedia.org/wiki/Technology_readiness_level'>framework</a> developed by NASA to describe the different levels of maturity of a technology.<br><br>For example, a proof of concept may come under TRL level 4.<br><br>TRL levels start at 1 for a basic idea through to 9 for a fully deployed solution.",
       "termCode": "trl",
       "related": [
         "poc"
@@ -585,6 +593,7 @@
     },
     {
       "name": "Sensitivity",
+      "alternateName": "Recall",
       "description": "The ability of a classification model to correctly identify individuals <em>with</em> a condition. This is also known as the true positive rate and recall. It is defined as the number of true positives over true positives and false negatives.<br><br>For example, an AI tool that has been developed to detect lung cancer from medical images is said to be sensitive if it correctly identifies people who have lung cancer.",
       "termCode": "sensitivity",
       "related": [
@@ -710,8 +719,9 @@
       ]
     },
     {
-      "name": "ROC",
-      "description": "Receiver Operator Characteristic. Used to create a plotted curve which demonstrates how the trade off between true positive rate and false positive rate changes as you vary the operating point of a classification model.<br><br>For an interactive demonstration of a ROC curve, visit this <a target='_blank' href='https://nhsx.github.io/covid-chest-imaging-database/experiments'>NCCID operating point experiment</a>.",
+      "name": "Receiver Operator Characteristic",
+      "acronym": "ROC",
+      "description": "Used to create a plotted curve which demonstrates how the trade off between true positive rate and false positive rate changes as you vary the operating point of a classification model.<br><br>For an interactive demonstration of a ROC curve, visit this <a target='_blank' href='https://nhsx.github.io/covid-chest-imaging-database/experiments'>NCCID operating point experiment</a>.",
       "termCode": "roc",
       "related": [
         "accuracy",
@@ -728,15 +738,16 @@
       ]
     },
     {
-      "name": "AUC",
-      "description": "Area Under the (Receiver Operator Character) Curve. A single number calculated from a ROC curve to help summarise the performance of a classification model.",
+      "name": "Area Under the (Receiver Operator Character) Curve",
+      "acronym": "AUC",
+      "description": "A single number calculated from a ROC curve to help summarise the performance of a classification model.",
       "termCode": "auc",
       "related": [
+        "roc",
         "accuracy",
         "specificity",
         "sensitivity",
         "precision",
-        "roc",
         "f1-score",
         "false-positive",
         "false-negative",
@@ -760,8 +771,9 @@
       ]
     },
     {
-      "name": "NCCID",
-      "description": "National COVID-19 Chest Imaging Database. The NCCID is a national database that supports better understanding of COVID-19 and the development of technology enabling the best care for patients hospitalised with a severe infection.",
+      "name": "National COVID-19 Chest Imaging Database",
+      "acronym": "NCCID",
+      "description": "The NCCID is a national database that supports better understanding of COVID-19 and the development of technology enabling the best care for patients hospitalised with a severe infection.",
       "termCode": "nccid",
       "related": [
         "database"
@@ -777,7 +789,8 @@
       ]
     },
     {
-      "name": "Multimodal AI",
+      "name": "Multimodal artificial intelligence",
+      "acronymn": "Multimodal AI",
       "description": "An approach to AI which incorporates multiple types of data. For example, a speech-to-text model that is typically trained on audio and text data, could include image data of lip movements taken from video recordings.<br><br>Multimodal AI can combine both numerical data such as blood pressure, heart rate, and imaging data such as a CT scan.<br><br>In healthcare, the term is also associated with specific 'modalities' of data, such as the sequences in <a target='_blank' href='https://prostatecanceruk.org/about-us/projects-and-policies/mpmri'>mpMRI</a> scanning. However, the concept of multimodality with respect to AI is more than just bringing different types of data together - it is about how very different AI models effectively interoperate - even 'merge' - to create a whole that is greater than the sum of its parts.",
       "termCode": "multimodal",
       "related": [
@@ -851,8 +864,9 @@
       ]
     },
     {
-      "name": "NLP",
-      "description": "Natural language processing. A collection of techniques which use speech and text data.<br><br>Speech-to-text systems convert verbal speech to text, such as in a smart speaker.<br>Natural language understanding systems convert text into concepts or instructions, such as your requests to play music or offer directions.<br>Text-to-speech systems convert text into verbal speech, such as responses from a smart speaker.<br>Natural language generation will create human-like text based on concepts, such as writing a report from a summary table of data.<br><br>NLP has developed significantly in recent years in part due to the availability of deep learning algorithms and transfomers.",
+      "name": "Natural language processing",
+      "acronym": "NLP",
+      "description": "A collection of techniques which use speech and text data.<br><br>Speech-to-text systems convert verbal speech to text, such as in a smart speaker.<br>Natural language understanding systems convert text into concepts or instructions, such as your requests to play music or offer directions.<br>Text-to-speech systems convert text into verbal speech, such as responses from a smart speaker.<br>Natural language generation will create human-like text based on concepts, such as writing a report from a summary table of data.<br><br>NLP has developed significantly in recent years in part due to the availability of deep learning algorithms and transfomers.",
       "termCode": "nlp",
       "related": [
         "deep-learning",
