@@ -3,12 +3,12 @@ import { Dialog, Transition } from "@headlessui/react"
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid"
 import data from "data/terms.json"
 
-export default function Term({ isOpen, title, description, related, onClose, onNext, onPrev, onSelectTermSlug }) {
+export default function Term({ isOpen, name, description, related, onClose, onNext, onPrev, onSelectTermSlug }) {
 
    /**
     * Get related terms from array
     */
-   const relatedTerms = related ? data.terms.filter(term => related.includes(term.slug)) : []
+   const relatedTerms = related ? data.terms.filter(term => related.includes(term.termCode)) : []
 
    return (
       <Transition appear show={isOpen} as={Fragment}>
@@ -54,7 +54,7 @@ export default function Term({ isOpen, title, description, related, onClose, onN
                      <div className="flex justify-between space-x-8 items-start">
                         <div>
                            <Dialog.Title as="h2" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-mono">
-                              {title}
+                              {name}
                            </Dialog.Title>
                         </div>
                         <div className="flex items-center">
@@ -78,12 +78,12 @@ export default function Term({ isOpen, title, description, related, onClose, onN
                               <h3 className="text-white font-bold">Related terms</h3>
                               {relatedTerms.map((term, index) => (
                                  <button
-                                    key={term.title}
+                                    key={term.name}
                                     type="button"
-                                    onClick={() => onSelectTermSlug(term.slug)}
+                                    onClick={() => onSelectTermSlug(term.termCode)}
                                     className="block text-blue-200 hover:text-white duration-100"
                                  >
-                                    {term.title}
+                                    {term.name}
                                  </button>
 
                               ))}

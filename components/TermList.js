@@ -18,12 +18,12 @@ export default function TermList({ terms, isShowingTerm, onSelectTermSlug }) {
                {terms.length == 0 && <p className="text-blue-200 hover:text-white text-lg md:text-2xl font-mono duration-100 text-left">No results found.</p>}
                {terms.map((term, index) => (
                   <button
-                     key={term.title + index}
+                     key={term.name + index}
                      type="button"
-                     onClick={() => onSelectTermSlug(term.slug)}
+                     onClick={() => onSelectTermSlug(term.termCode)}
                      className="text-blue-200 hover:text-white text-lg md:text-2xl font-mono duration-100 text-left"
                   >
-                     {term.title}
+                     {term.name}
                   </button>
                ))}
             </div>

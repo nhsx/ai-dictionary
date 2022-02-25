@@ -11,8 +11,8 @@ import Header from "components/Header"
  * Sort by title property 
  */
 const titleSort = (a, b) => {
-   if (a.title < b.title) return -1
-   if (b.title < a.title) return 1
+   if (a.name < b.name) return -1
+   if (b.name < a.name) return 1
    return 0
 }
 
@@ -20,9 +20,9 @@ const titleSort = (a, b) => {
  * Find search query in term titles 
  */
 const titleSearch = (search, terms) => terms.filter(term =>
-   term.title.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+   term.name.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
    term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-   term.slug.toLowerCase().indexOf(search.toLowerCase()) > -1
+   term.termCode.toLowerCase().indexOf(search.toLowerCase()) > -1
 ).sort(titleSort)
 
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
    // On slug change
    useEffect(() => {
       if (currentTermSlug) {
-         setCurrentTermIndex(terms.findIndex(term => term.slug === currentTermSlug))
+         setCurrentTermIndex(terms.findIndex(term => term.termCode === currentTermSlug))
       }
    }, [currentTermSlug])
 
@@ -91,7 +91,7 @@ export default function Home() {
     */
    useEffect(() => {
       if (!showTerm) router.replace({ pathname: '/', query: null })
-      else if (router.query.term !== currentTerm.slug) router.replace({ pathname: '/', query: { term: currentTerm.slug } })
+      else if (router.query.term !== currentTerm.termCode) router.replace({ pathname: '/', query: { term: currentTerm.termCode } })
    }, [currentTerm, showTerm])
 
    /**
@@ -107,8 +107,8 @@ export default function Home() {
    /**
     * Select term by slug 
     */
-   const selectTermBySlug = (slug) => {
-      const matchingIndex = terms.findIndex((term) => term.slug === slug)
+   const selectTermBySlug = (termCode) => {
+      const matchingIndex = terms.findIndex((term) => term.termCode === termCode)
       if (matchingIndex >= 0) {
          setCurrentTermIndex(matchingIndex)
          setShowTerm(true)
