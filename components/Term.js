@@ -8,7 +8,7 @@ export default function Term({ isOpen, name, description, related, onClose, onNe
    /**
     * Get related terms from array
     */
-   const relatedTerms = related?.length ? related.map(slug => data.terms.find(term => term.slug === slug)) : []
+   const relatedTerms = related?.length ? related.map(termCode => data.terms.find(term => term.termCode === termCode)) : []
 
    return (
       <Transition appear show={isOpen} as={Fragment}>
