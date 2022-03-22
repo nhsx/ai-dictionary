@@ -44,45 +44,45 @@ try:
 except:
     raise Exception("Unable to parse terms.json as valid json")
 
-# Check for unique slugs
+# Check for unique termCodes
 
-slugs = []
+termCodes = []
 for term in terms["terms"]:
-    if term["slug"] in slugs:
-        raise Exception(f"Duplicate slug found for \"{term['slug']}\"")
+    if term["termCode"] in termCodes:
+        raise Exception(f"Duplicate termCode found for \"{term['termCode']}\"")
     else:
-        slugs.append(term["slug"])
+        termCodes.append(term["termCode"])
 
-print(f"{len(slugs)} unique slug(s) in database")
+print(f"{len(termCodes)} unique termCode(s) in database")
 
-# Check for unique titles
+# Check for unique names
 
-titles = []
+names = []
 for term in terms["terms"]:
-    if term["title"] in titles:
-        raise Exception(f"Duplicate title found for \"{term['title']}\"")
+    if term["name"] in names:
+        raise Exception(f"Duplicate name found for \"{term['name']}\"")
     else:
-        titles.append(term["title"])
+        names.append(term["name"])
 
-print(f"{len(titles)} unique title(s) in database")
+print(f"{len(names)} unique name(s) in database")
 
 # Check for orphaned slugs
 
 for term in terms["terms"]:
     related = term["related"]
-    for related_slug in related:
-        if related_slug not in slugs:
-            raise Exception(f"Orphaned related slug found: {related_slug}")
-print("No orphaned slugs found")
+    for related_termCode in related:
+        if related_termCode not in termCodes:
+            raise Exception(f"Orphaned related termCode found: {related_termCode}")
+print("No orphaned termCode found")
 
 # Check for self-referencing terms
 
 for term in terms["terms"]:
     related = term["related"]
-    for related_slug in related:
-        if related_slug == term["slug"]:
-            raise Exception(f"Self-referencing slug found: {related_slug}")
-print("No self-referencing slugs found")
+    for related_termCode in related:
+        if related_termCode == term["termCode"]:
+            raise Exception(f"Self-referencing termCode found: {related_termCode}")
+print("No self-referencing terms found")
 
 # Check valid links
 

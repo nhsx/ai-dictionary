@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
+import Badge from "./Badge"
 
 export default function TermList({ terms, isShowingTerm, onSelectTermSlug }) {
 
@@ -18,12 +19,13 @@ export default function TermList({ terms, isShowingTerm, onSelectTermSlug }) {
                {terms.length == 0 && <p className="text-blue-200 hover:text-white text-lg md:text-2xl font-mono duration-100 text-left">No results found.</p>}
                {terms.map((term, index) => (
                   <button
-                     key={term.title + index}
+                     key={term.name + index}
                      type="button"
-                     onClick={() => onSelectTermSlug(term.slug)}
-                     className="text-blue-200 hover:text-white text-lg md:text-2xl font-mono duration-100 text-left"
+                     onClick={() => onSelectTermSlug(term.termCode)}
+                     className="text-blue-200 hover:text-white text-lg md:text-2xl font-mono duration-100 text-left flex items-center space-x-4"
                   >
-                     {term.title}
+                     <span>{term.name}</span>
+                     {term.acronym && <Badge>{term.acronym}</Badge>}
                   </button>
                ))}
             </div>
