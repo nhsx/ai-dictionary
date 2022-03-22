@@ -889,9 +889,9 @@
       ]
     },
     {
-      "title": "Confusion matrix",
-      "description": "A table that is used to describe the performance of a classification model on a set of test data for which the true values are known. It can be used to derive a number of measures such as sensitivity and specificity.<br><br>For example, a model may predict whether a patient has a form of diabetes, or not. It's performance can be described by writing out where it correctly or incorrectly predicted diabetes (positive) or not (negative) where we know the actual results:<br><br><table><thead><tr><th colspan='2' rowspan='2'></th><th colspan='2'>Predicted</th></tr><tr><th>Positive</th><th>Negative</th></tr></thead><tbody><tr><td rowspan='2'>Actual</td><td>Positive</td><td>True positive</td><td>False negative</td></tr><tr><td>Negative</td><td>False positive</td><td>True negative</td></tr></tbody></table>",
-      "slug": "confusion-matrix",
+      "name": "Confusion matrix",
+      "description": "A table that is used to describe the performance of a classification model on a set of test data for which the true values are known. It can be used to derive a number of measures such as sensitivity and specificity.<br><br>For example, a model may predict whether a patient has a form of diabetes, or not. It's performance can be described by writing out where it correctly or incorrectly predicted diabetes (positive) or not (negative) where we know the actual results:<br><br><table id='matrix-table'><thead><tr><th colspan='2' rowspan='2'></th><th colspan='2'>Predicted</th></tr><tr><th>Positive</th><th>Negative</th></tr></thead><tbody><tr><th rowspan='2'>Actual</th><th>Positive</th><td>True positive</td><td>False negative</td></tr><tr><th>Negative</th><td>False positive</td><td>True negative</td></tr></tbody></table>",
+      "termCode": "confusion-matrix",
       "related": [
         "accuracy",
         "specificity",

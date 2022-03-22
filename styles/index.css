@@ -39,4 +39,13 @@
       color: #BFD7ED;
    }
 
+   #matrix-table th, #matrix-table td {
+      @apply px-4 py-3 text-lg bg-white bg-opacity-5
+   }
+   
+   #matrix-table tbody th {
+      @apply rotate-180;
+      writing-mode: vertical-lr;
+   }
+
 }
