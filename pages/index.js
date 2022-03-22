@@ -19,12 +19,25 @@ const titleSort = (a, b) => {
 /**
  * Find search query in term titles 
  */
-const titleSearch = (search, terms) => terms.filter(term =>
-   term.name.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-   term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-   term.termCode.toLowerCase().indexOf(search.toLowerCase()) > -1 || 
-   term.alternateName?.toLowerCase().indexOf(search.toLowerCase()) > -1
-).sort(titleSort)
+const textSearch = (search, terms) => {
+
+   // Search by acronym first 
+   const acronymSearch = terms.filter(term =>
+      term.acronym?.toLowerCase().indexOf(search.toLowerCase()) > -1
+   ).sort(titleSort)
+
+   // Search by other fields 
+   const otherSearch = terms.filter(term =>
+      term.name.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+      term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+      term.termCode.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+      term.alternateName?.toLowerCase().indexOf(search.toLowerCase()) > -1
+   ).sort(titleSort)
+
+   // Merge and remove duplicates
+   return [...new Set([...acronymSearch, ...otherSearch])]
+   
+}
 
 export default function Home() {
 
@@ -41,7 +54,7 @@ export default function Home() {
    const [searchTerm, setSearchTerm] = useState('')
    const [keyToggle, setKeyToggle] = useState(false)
    const [currentTermIndex, setCurrentTermIndex] = useState(null)
-   const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? titleSearch(searchTerm, terms) : [...terms].sort(titleSort)) : [], [searchTerm])
+   const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? textSearch(searchTerm, terms) : [...terms].sort(titleSort)) : [], [searchTerm])
    const currentTerm = useMemo(() => currentTermIndex !== null ? terms[currentTermIndex] : null, [currentTermIndex])
 
    /**
