@@ -22,7 +22,8 @@ const titleSort = (a, b) => {
 const titleSearch = (search, terms) => terms.filter(term =>
    term.name.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
    term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-   term.termCode.toLowerCase().indexOf(search.toLowerCase()) > -1
+   term.termCode.toLowerCase().indexOf(search.toLowerCase()) > -1 || 
+   term.alternateName?.toLowerCase().indexOf(search.toLowerCase()) > -1
 ).sort(titleSort)
 
 export default function Home() {
