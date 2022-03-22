@@ -2,6 +2,7 @@ import { Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid"
 import data from "data/terms.json"
+import Badge from "./Badge"
 
 export default function Term({ isOpen, name, description, acronym, alternateName, related, onClose, onNext, onPrev, onSelectTermSlug }) {
 
@@ -68,19 +69,21 @@ export default function Term({ isOpen, name, description, acronym, alternateName
                      </div>
 
                      <Dialog.Description as="div" className="mt-6 text-xl md:text-2xl text-blue-200">
-                        <div className="flex space-x-2">
-                           {acronym && (
-                              <div className="inline-flex bg-black bg-opacity-20 px-3 py-1 rounded mb-8 text-sm space-x-2">
-                                 <span className="text-white">{acronym}</span>
-                              </div>
-                           )}
-                           {alternateName && (
-                              <div className="inline-flex bg-black bg-opacity-20 px-3 py-1 rounded mb-8 text-sm space-x-2">
-                                 <span>Also known as: </span>
-                                 <span className="text-white">{alternateName}</span>
-                              </div>
-                           )}
-                        </div>
+                        {(acronym || alternateName) && (
+                           <div className="flex space-x-2 mb-8">
+                              {acronym && (
+                                 <Badge>
+                                    {acronym}
+                                 </Badge>
+                              )}
+                              {alternateName && (
+                                 <Badge>
+                                    <span>Also known as: </span>
+                                    <span className="text-white">{alternateName}</span>
+                                 </Badge>
+                              )}
+                           </div>
+                        )}
                         <div id="term-content" dangerouslySetInnerHTML={{ __html: description }}></div>
                      </Dialog.Description>
 
