@@ -11,19 +11,33 @@ import Header from "components/Header"
  * Sort by title property 
  */
 const titleSort = (a, b) => {
-   if (a.title < b.title) return -1
-   if (b.title < a.title) return 1
+   if (a.name < b.name) return -1
+   if (b.name < a.name) return 1
    return 0
 }
 
 /**
  * Find search query in term titles 
  */
-const titleSearch = (search, terms) => terms.filter(term =>
-   term.title.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-   term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-   term.slug.toLowerCase().indexOf(search.toLowerCase()) > -1
-).sort(titleSort)
+const textSearch = (search, terms) => {
+
+   // Search by acronym first 
+   const acronymSearch = terms.filter(term =>
+      term.acronym?.toLowerCase().indexOf(search.toLowerCase()) > -1
+   ).sort(titleSort)
+
+   // Search by other fields 
+   const otherSearch = terms.filter(term =>
+      term.name.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+      term.description.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+      term.termCode.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+      term.alternateName?.toLowerCase().indexOf(search.toLowerCase()) > -1
+   ).sort(titleSort)
+
+   // Merge and remove duplicates
+   return [...new Set([...acronymSearch, ...otherSearch])]
+   
+}
 
 export default function Home() {
 
@@ -40,7 +54,7 @@ export default function Home() {
    const [searchTerm, setSearchTerm] = useState('')
    const [keyToggle, setKeyToggle] = useState(false)
    const [currentTermIndex, setCurrentTermIndex] = useState(null)
-   const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? titleSearch(searchTerm, terms) : [...terms].sort(titleSort)) : [], [searchTerm])
+   const filteredTerms = useMemo(() => terms?.length > 0 ? (searchTerm?.length > 0 ? textSearch(searchTerm, terms) : [...terms].sort(titleSort)) : [], [searchTerm])
    const currentTerm = useMemo(() => currentTermIndex !== null ? terms[currentTermIndex] : null, [currentTermIndex])
 
    /**
@@ -52,7 +66,7 @@ export default function Home() {
    // On slug change
    useEffect(() => {
       if (currentTermSlug) {
-         setCurrentTermIndex(terms.findIndex(term => term.slug === currentTermSlug))
+         setCurrentTermIndex(terms.findIndex(term => term.termCode === currentTermSlug))
       }
    }, [currentTermSlug])
 
@@ -91,7 +105,7 @@ export default function Home() {
     */
    useEffect(() => {
       if (!showTerm) router.replace({ pathname: '/', query: null })
-      else if (router.query.term !== currentTerm.slug) router.replace({ pathname: '/', query: { term: currentTerm.slug } })
+      else if (router.query.term !== currentTerm.termCode) router.replace({ pathname: '/', query: { term: currentTerm.termCode } })
    }, [currentTerm, showTerm])
 
    /**
@@ -107,8 +121,8 @@ export default function Home() {
    /**
     * Select term by slug 
     */
-   const selectTermBySlug = (slug) => {
-      const matchingIndex = terms.findIndex((term) => term.slug === slug)
+   const selectTermBySlug = (termCode) => {
+      const matchingIndex = terms.findIndex((term) => term.termCode === termCode)
       if (matchingIndex >= 0) {
          setCurrentTermIndex(matchingIndex)
          setShowTerm(true)

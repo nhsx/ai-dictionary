@@ -9,10 +9,10 @@
     "export": "next export"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.3",
-    "@heroicons/react": "^1.0.5",
-    "@tailwindcss/forms": "^0.4.0",
-    "framer-motion": "^6.2.4",
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.6",
+    "@tailwindcss/forms": "^0.5.0",
+    "framer-motion": "^6.2.8",
     "next": "^12.1.0",
     "next-seo": "^5.1.0",
     "react": "^17.0.2",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6",
-    "tailwindcss": "^3.0.18"
+    "postcss": "^8.4.8",
+    "tailwindcss": "^3.0.23"
   }
 }

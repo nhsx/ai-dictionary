@@ -2,13 +2,14 @@ import { Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid"
 import data from "data/terms.json"
+import Badge from "./Badge"
 
-export default function Term({ isOpen, title, description, related, onClose, onNext, onPrev, onSelectTermSlug }) {
+export default function Term({ isOpen, name, description, acronym, alternateName, related, onClose, onNext, onPrev, onSelectTermSlug }) {
 
    /**
     * Get related terms from array
     */
-   const relatedTerms = related ? data.terms.filter(term => related.includes(term.slug)) : []
+   const relatedTerms = related?.length ? related.map(termCode => data.terms.find(term => term.termCode === termCode)) : []
 
    return (
       <Transition appear show={isOpen} as={Fragment}>
@@ -54,7 +55,7 @@ export default function Term({ isOpen, title, description, related, onClose, onN
                      <div className="flex justify-between space-x-8 items-start">
                         <div>
                            <Dialog.Title as="h2" className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-mono">
-                              {title}
+                              {name}
                            </Dialog.Title>
                         </div>
                         <div className="flex items-center">
@@ -68,6 +69,21 @@ export default function Term({ isOpen, title, description, related, onClose, onN
                      </div>
 
                      <Dialog.Description as="div" className="mt-6 text-xl md:text-2xl text-blue-200">
+                        {(acronym || alternateName) && (
+                           <div className="flex space-x-2 mb-8">
+                              {acronym && (
+                                 <Badge>
+                                    {acronym}
+                                 </Badge>
+                              )}
+                              {alternateName && (
+                                 <Badge>
+                                    <span>Also known as: </span>
+                                    <span className="text-white">{alternateName}</span>
+                                 </Badge>
+                              )}
+                           </div>
+                        )}
                         <div id="term-content" dangerouslySetInnerHTML={{ __html: description }}></div>
                      </Dialog.Description>
 
@@ -78,12 +94,12 @@ export default function Term({ isOpen, title, description, related, onClose, onN
                               <h3 className="text-white font-bold">Related terms</h3>
                               {relatedTerms.map((term, index) => (
                                  <button
-                                    key={term.title}
+                                    key={term.name}
                                     type="button"
-                                    onClick={() => onSelectTermSlug(term.slug)}
+                                    onClick={() => onSelectTermSlug(term.termCode)}
                                     className="block text-blue-200 hover:text-white duration-100"
                                  >
-                                    {term.title}
+                                    {term.name}
                                  </button>
 
                               ))}

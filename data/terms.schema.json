@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://nhsx.github.io/ai-dictionary",
     "title": "AI terms",
-    "description": "AI terms in NHSX AI Dictionary",
+    "description": "AI terms in NHS AI Lab AI Dictionary",
     "type": "object",
     "properties": {
         "terms": {
@@ -12,36 +12,44 @@
                 "description": "An AI term",
                 "type": "object",
                 "properties": {
-                    "title": {
-                        "description": "The AI term",
+                    "name": {
+                        "description": "The expanded artificial intelligence term (see acronymn)",
                         "type": "string",
                         "minLength": 1
+                    },
+                    "acronym": {
+                        "description": "The acronym form of the title, optional",
+                        "type": "string"
                     },
                     "description": {
                         "description": "The explanation of what the AI term is",
                         "type": "string",
                         "minLength": 2
                     },
-                    "slug": {
+                    "alternateName": {
+                        "description": "Synonym for this term",
+                        "type": "string"
+                    },
+                    "termCode": {
                         "description": "Short form identifier for the term, used in related terms and for URL bookmarking",
                         "type": "string",
-                        "$ref": "#/definitions/slug"
+                        "$ref": "#/definitions/termCode"
                     },
                     "related": {
                         "description": "A list of related terms",
                         "type": "array",
                         "items": {
-                            "description": "Slug for a related term",
+                            "description": "Term codes for related terms",
                             "type": "string",
-                            "$ref": "#/definitions/slug"
+                            "$ref": "#/definitions/termCode"
                         },
                         "uniqueItems": true
                     }
                 },
                 "required": [
-                    "title",
+                    "name",
                     "description",
-                    "slug",
+                    "termCode",
                     "related"
                 ]
             },
@@ -53,7 +61,7 @@
     ],
     "additionalProperties": false,
     "definitions": {
-        "slug": {
+        "termCode": {
             "description": "Unique short form identifier for a specific AI term",
             "type": "string",
             "minLength": 1

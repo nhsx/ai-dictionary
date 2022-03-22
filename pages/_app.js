@@ -1,9 +1,7 @@
-import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
-import { prefix } from 'lib/prefix'
+import { NextSeo } from 'next-seo'
 
 import 'styles/index.css'
-import { NextSeo } from 'next-seo'
 
 export default function MyApp({ Component, pageProps }) {
    return (
@@ -31,13 +29,6 @@ export default function MyApp({ Component, pageProps }) {
                cardType: 'summary_large_image',
             }}
          />
-         <Head>
-            <link rel="icon" href={`${prefix}/favicon.ico`} />
-            <link
-               href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
-               rel="stylesheet"
-            />
-         </Head>
          <RecoilRoot>
             <div className="antialiased">
                <Component {...pageProps} />
