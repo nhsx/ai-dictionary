@@ -343,7 +343,8 @@
     },
     {
       "name": "Explainability",
-      "description": "AI can be built on complex algorithms and data, and explainability is a measure of how understandable, or explainable, the decisions of an AI system are to humans.<br><br>For example, an AI may predict which patients are most in need of surgery, but should be able to explain why it has prioritised patients in a certain way.",
+      "acronym": "XAI",
+      "description": "AI can be built on complex algorithms and data, and explainability is a measure of how understandable, or explainable, the decisions of an AI system are to humans.<br><br>For example, an AI may predict which patients are most in need of surgery, but should be able to explain why it has prioritised patients in a certain way.<br><br>XAI (\"eXplainable Artificial Intelligence\") is where humans can understand how the results of an AI model were obtained.",
       "termCode": "explainability",
       "related": [
         "ai",
