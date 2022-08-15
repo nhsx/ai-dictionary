@@ -76,6 +76,7 @@
       "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician.<br><br>Imaging data is a common type of healthcare data, which includes data generated from X-ray machines, CT scanners, MRI scanners, OCT systems etc.",
       "termCode": "data",
       "related": [
+        "linked-data",
         "structured",
         "unstructured",
         "database",
@@ -312,6 +313,7 @@
       "termCode": "database",
       "related": [
         "data",
+        "linked-data",
         "structured",
         "cloud",
         "on-prem",
@@ -901,6 +903,15 @@
         "false-negative",
         "true-positive",
         "true-negative"
+      ]
+    },
+    {
+      "name": "Linked data",
+      "description": "Data which has been combined (connected, or \"linked\") with other relevant data to increase the available information on a specific individual or population.<br><br>In health and care, an example would be linking GP records with hospital records, which are typically generated independently.<br><br>There are many different datasets that could be linked to improve the information available to treat patients, such as social care records, dental records and mental health records.",
+      "termCode": "linked-data",
+      "related": [
+        "data",
+        "database"
       ]
     }
   ]
