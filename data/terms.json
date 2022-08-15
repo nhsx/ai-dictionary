@@ -936,6 +936,17 @@
         "deep-learning",
         "database"
       ]
+    },
+    {
+      "name": "Generative Adversarial Network",
+      "acronym": "GAN",
+      "description": "A class of deep learning where two networks compete with each other to improve the overall performance of the model.<br><br>A generator network will generate artificial examples based on the training data, and the discriminator will try to judge whether they are real or artificial. This is an iterative process which continues until the generator can adequately \"fool\" the discriminator.<br><br>This technique is predominantly used in image generation, and has potential in health and care to generate example scans for training purposes, or to augment missing data.",
+      "termCode": "generative-adversarial-network",
+      "related": [
+        "neural-network",
+        "deep-learning",
+        "ai"
+      ]
     }
   ]
 }
