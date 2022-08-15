@@ -76,6 +76,7 @@
       "description": "Information stored in a digital way.<br><br>For example, this can be information on your physical state such as heart rate, blood pressure, or notes on your recent visit to your primary care physician.<br><br>Imaging data is a common type of healthcare data, which includes data generated from X-ray machines, CT scanners, MRI scanners, OCT systems etc.",
       "termCode": "data",
       "related": [
+        "metadata",
         "linked-data",
         "structured",
         "unstructured",
@@ -909,6 +910,15 @@
       "name": "Linked data",
       "description": "Data which has been combined (connected, or \"linked\") with other relevant data to increase the available information on a specific individual or population.<br><br>In health and care, an example would be linking GP records with hospital records, which are typically generated independently.<br><br>There are many different datasets that could be linked to improve the information available to treat patients, such as social care records, dental records and mental health records.",
       "termCode": "linked-data",
+      "related": [
+        "data",
+        "database"
+      ]
+    },
+    {
+      "name": "Metadata",
+      "description": "Data about data, or data that provides information on one or more aspects of the data.<br><br>For example, an MRI scan contains data of the scan itself (a series of images), but also metadata including patient identifier, date of scan, settings of the scan and more.<br><br>Metadata isn't always immediately visible to humans, but is machine readable and can contain important information.",
+      "termCode": "metadata",
       "related": [
         "data",
         "database"
