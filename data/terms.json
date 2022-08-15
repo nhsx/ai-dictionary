@@ -808,9 +808,10 @@
       "description": "Neural networks are an approach to machine learning, loosely inspired by nature, that can describe complex relationships using a broader range of data than traditional approaches.<br><br>For example, neural networks can be trained on image data to describe features in medical images such as tumours. They can also be trained on free text such as clinical notes, allowing their use in clinical coding applications.<br><br>Neural networks can also be trained on tabulated, or structured data, such as a spreadsheet. Their ability to model complexity often comes at the cost of explainability, whereby the more complex the model, the harder to explain it becomes.",
       "termCode": "neural-network",
       "related": [
+        "deep-learning",
+        "graph-neural-network",
         "model",
         "machine-learning",
-        "deep-learning",
         "structured",
         "unstructured",
         "supervised",
@@ -922,6 +923,17 @@
       "termCode": "metadata",
       "related": [
         "data",
+        "database"
+      ]
+    },
+    {
+      "name": "Graph Neural Network",
+      "acronym": "GNN",
+      "description": "A class of deep learning methods designed to make predictions on data described by graphs.<br><br>Graphs are a way of representing data, relationships and their complexity.<br><br>GNNs are neural networks that can be directly applied to graphs, and provide a way to generate node-level, edge-level, and graph-level predictions.<br><br>In recent years, a number of variants of GNNs have been developed such as graph convolutional networks (GCN), graph attention networks (GAT) and graph recurrent networks (GRN).<br><br>An example of data in healthcare representable as graphs is psychopathology networks consist of aspects (e.g. symptoms) of mental disorders (nodes) and the connections between those aspects (edges). A trained GNN on this graph would be able to predict disorders based on the provided symptoms.",
+      "termCode": "graph-neural-network",
+      "related": [
+        "neural-network",
+        "deep-learning",
         "database"
       ]
     }
