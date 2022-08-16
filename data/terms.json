@@ -442,19 +442,20 @@
     },
     {
       "name": "Fairness",
-      "description": "When individuals are not penalised by algorithms because they are part of a (sensitive) group.<br><br>For example, an AI algorithm used in law enforcement in the USA was shown to unfairly increase sentence recommendations based on racial background.",
+      "description": "When individuals are not penalised by algorithms because they are part of a (sensitive) group.<br><br>For example, an AI algorithm used in law enforcement in the USA was shown to unfairly increase sentence recommendations based on racial background (an example of unfairness caused by discrimination bias).<br><br>Note that in <a href='https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/principles/lawfulness-fairness-and-transparency/#fairness' target='_blank'>data protection law</a>, fairness refers to the use of data in ways that people would reasonably expect, and that would not have unjustified adverse affects on them.",
       "termCode": "fairness",
       "related": [
         "bias",
         "explainability",
         "ai",
         "predictive-analytics",
-        "algorithm"
+        "algorithm",
+        "data-protection"
       ]
     },
     {
       "name": "Bias",
-      "description": "Errors contained in AI which unfairly treat a group of individuals over another.<br><br>AI algorithms are often trained on historical data which can contain bias that exists in society. Unless the algorithms are built with fairness in mind, they may repeat this bias in their predictions.<br><br>For example, an AI trained on CVs from engineers, who are historically predominantly male, may unfairly penalise CVs from women if the algorithms are not tested for fairness and modified to remove bias.",
+      "description": "The disproportionate weighting in favour of, or against a specific item or individual. There are <a href='https://en.wikipedia.org/wiki/Bias' target='_blank'>many types of bias</a> that exist.<br><br>AI algorithms are often trained on historical data which can contain bias that exists in society, and are trained by humans who themselves have bias. Unless the algorithms are built with fairness in mind, they may repeat these biases in their predictions.<br><br>For example, an AI trained on CVs from engineers, who are historically predominantly male, may unfairly penalise CVs from women if the algorithms are not tested for fairness and modified to remove bias. This is an example of selection bias.",
       "termCode": "bias",
       "related": [
         "fairness",
@@ -563,7 +564,7 @@
     },
     {
       "name": "Accuracy",
-      "description": "The proportion of correctly identified positive and negative cases in a classification model.<br><br>For example, an AI model that correctly identifies all positive and negative cases of patients with e.g. Covid-19 would have an accuracy of 1.0 (100%).",
+      "description": "<em>Classification metric</em>.<br><br>The proportion of correctly identified positive and negative cases in a classification model.<br><br>For example, an AI model that correctly identifies all positive and negative cases of patients with e.g. Covid-19 would have an accuracy of 1.0 (100%).<br><br>Note that in <a href='https://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-ai-and-data-protection/what-do-we-need-to-do-to-ensure-lawfulness-fairness-and-transparency-in-ai-systems/?q=controller#whatdoweneed' target='_blank'>data protection law</a>, accuracy refers to accurate and up to date record keeping.",
       "termCode": "accuracy",
       "related": [
         "specificity",
@@ -576,7 +577,8 @@
         "false-negative",
         "true-positive",
         "true-negative",
-        "operating-point"
+        "operating-point",
+        "data-protection"
       ]
     },
     {
