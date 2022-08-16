@@ -68,7 +68,8 @@
       "related": [
         "statistics",
         "ai",
-        "machine-learning"
+        "machine-learning",
+        "gradient-descent"
       ]
     },
     {
@@ -78,9 +79,12 @@
       "related": [
         "metadata",
         "linked-data",
+        "synthetic-data",
         "structured",
         "unstructured",
         "database",
+        "binary",
+        "sequential-data",
         "model"
       ]
     },
@@ -106,6 +110,7 @@
         "unsupervised",
         "reinforcement",
         "algorithm",
+        "gradient-descent",
         "statistics",
         "federated-learning",
         "mlops",
@@ -285,7 +290,8 @@
       "termCode": "anonymisation",
       "related": [
         "pseudonymisation",
-        "data-protection"
+        "data-protection",
+        "synthetic-data"
       ]
     },
     {
@@ -295,7 +301,8 @@
       "related": [
         "anonymisation",
         "pseudonymisation",
-        "federated-learning"
+        "federated-learning",
+        "synthetic-data"
       ]
     },
     {
@@ -398,6 +405,7 @@
       "termCode": "training",
       "related": [
         "machine-learning",
+        "gradient-descent",
         "supervised",
         "training-data",
         "test-data",
@@ -547,6 +555,7 @@
         "ai",
         "machine-learning",
         "predictive-analytics",
+        "binary",
         "regression"
       ]
     },
@@ -875,11 +884,12 @@
     {
       "name": "Natural language processing",
       "acronym": "NLP",
-      "description": "A collection of techniques which use speech and text data.<br><br>Speech-to-text systems convert verbal speech to text, such as in a smart speaker.<br>Natural language understanding systems convert text into concepts or instructions, such as your requests to play music or offer directions.<br>Text-to-speech systems convert text into verbal speech, such as responses from a smart speaker.<br>Natural language generation will create human-like text based on concepts, such as writing a report from a summary table of data.<br><br>NLP has developed significantly in recent years in part due to the availability of deep learning algorithms and transfomers.",
+      "description": "A collection of techniques which use speech and text data.<br><br>Speech-to-text systems convert verbal speech to text, such as in a smart speaker.<br><br>Natural language understanding systems convert text into concepts or instructions, such as your requests to play music or offer directions.<br><br>Text-to-speech systems convert text into verbal speech, such as responses from a smart speaker.<br><br>Natural language generation will create human-like text based on concepts, such as writing a report from a summary table of data.<br><br>NLP has developed significantly in recent years in part due to the availability of deep learning algorithms and transfomers.",
       "termCode": "nlp",
       "related": [
         "deep-learning",
         "transformer",
+        "sequential-data",
         "neural-network",
         "machine-learning",
         "supervised",
@@ -960,6 +970,46 @@
         "machine-learning",
         "model",
         "data-protection"
+      ]
+    },
+    {
+      "name": "Synthetic Data",
+      "description": "Data that reflects the distribution and characteristics of real data, but is not real data and cannot be used to identify an individual.<br><br>Good quality synthetic data will enable research on realistic data without the associated information governance and security overheads that using real data can entail.",
+      "termCode": "synthetic-data",
+      "related": [
+        "data",
+        "data-protection"
+      ]
+    },
+    {
+      "name": "Gradient descent",
+      "description": "A common approach used in supervised machine learning, where models are trained to fit the training data, by minimising the error in predictions in an iterative fashion.<br><br>In gradient descent, small 'steps' are taken in different 'directions' in search of the smallest error.",
+      "termCode": "gradient-descent",
+      "related": [
+        "machine-learning",
+        "supervised",
+        "training",
+        "training-data",
+        "algorithm"
+      ]
+    },
+    {
+      "name": "Binary",
+      "description": "A representation of information with only two states: 0 or 1.<br><br>Binary encoding is frequently used to store presence/absence e.g. `is_smoker` which would either be `0` or `1`.<br><br>Binary classification is a model which can predict whether something is one thing or not, e.g. a model to predict whether or not a patient has Covid-19, or not.",
+      "termCode": "binary",
+      "related": [
+        "data",
+        "classification",
+        "model"
+      ]
+    },
+    {
+      "name": "Sequential data",
+      "description": "Data where the order matters.<br><br>For example, time series data of blood pressure over time, or natural language (text) such as clinician's notes, or DNA sequences.",
+      "termCode": "sequential-data",
+      "related": [
+        "data",
+        "nlp"
       ]
     }
   ]
