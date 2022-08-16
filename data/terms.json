@@ -63,7 +63,7 @@
     },
     {
       "name": "Algorithm",
-      "description": "A set of instructions that can be followed by a human or computer.<br><br>For example, the NHS <a target='_blank' href='https://www.england.nhs.uk/wp-content/uploads/2014/06/psa-aki-alg.pdf'>algorithm for detecting Acute Kidney Injury</a> is a set of instructions that can be repeated for multiple patients.<br><br>In AI, machine learning algorithms use data to make decisions.",
+      "description": "A set of instructions that can be followed by a human or computer.<br><br>For example, the NHS <a target='_blank' href='https://www.england.nhs.uk/wp-content/uploads/2014/06/psa-aki-alg.pdf'>algorithm for detecting Acute Kidney Injury</a> is a set of instructions that can be repeated for multiple patients.<br><br>In AI, machine learning algorithms use data to make predictions or recommendations which can inform decision making",
       "termCode": "algorithm",
       "related": [
         "statistics",
