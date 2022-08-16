@@ -49,7 +49,7 @@
     {
       "name": "Artificial Intelligence",
       "acronym": "AI",
-      "description": "The use of digital technology to create systems capable of performing tasks commonly thought to require intelligence.<br><br>For example, an AI system may analyse radiography images and detect tumours in cancer patients.<br><br>In 2021, the UK government announced its <a target='_blank' href='https://www.gov.uk/government/publications/national-ai-strategy'>National AI Strategy</a>.",
+      "description": "The use of digital technology to create systems capable of performing tasks commonly thought to require human intelligence.<br><br>For example, an AI system may analyse radiography images and detect tumours in cancer patients.<br><br>In 2021, the UK government announced its <a target='_blank' href='https://www.gov.uk/government/publications/national-ai-strategy'>National AI Strategy</a>.",
       "termCode": "ai",
       "related": [
         "machine-learning",
