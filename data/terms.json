@@ -107,6 +107,7 @@
         "reinforcement",
         "algorithm",
         "statistics",
+        "federated-learning",
         "mlops",
         "data",
         "model"
@@ -293,7 +294,8 @@
       "termCode": "data-protection",
       "related": [
         "anonymisation",
-        "pseudonymisation"
+        "pseudonymisation",
+        "federated-learning"
       ]
     },
     {
@@ -946,6 +948,16 @@
         "neural-network",
         "deep-learning",
         "ai"
+      ]
+    },
+    {
+      "name": "Federated Learning",
+      "description": "An approach to machine learning where a model is trained on data where the data exists (in multiple locations), rather than the traditional approach of moving the data to a central location for model training.<br><br>This decentralised approach reduces the need to transfer data across different entities, and may reduce the associated information governance and security overheads that this can entail.",
+      "termCode": "federated-learning",
+      "related": [
+        "machine-learning",
+        "model",
+        "data-protection"
       ]
     }
   ]
