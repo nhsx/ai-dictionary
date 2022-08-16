@@ -115,7 +115,7 @@
     },
     {
       "name": "Unsupervised machine learning",
-      "description": "A type of machine learning where you do not know the outcome or definition of your data, and are looking for patterns. This includes clustering techniques such as k-nearest neighbours and principal component analysis (PCA).<br><br>For example, unsupervised machine learning can help identify different groups of hospital patients who use hospital services in different ways.",
+      "description": "A type of machine learning where you do not know the outcome or definition of your data, and are looking for patterns. This includes clustering techniques such as k-means and principal component analysis (PCA).<br><br>For example, unsupervised machine learning can help identify different groups of hospital patients who use hospital services in different ways.",
       "termCode": "unsupervised",
       "related": [
         "supervised",
