@@ -24,7 +24,13 @@ To add new terms, simply add a new item to the terms array following the structu
 Take a look at the existing terms in the JSON file as an example of the structure above. 
 You can also edit existing terms or remove them from the array. 
 
-[Automated tests](tests/) run to check valid JSON syntax on every push to this repo.
+### Tests
+
+* [Automated tests](tests/) run to check valid JSON syntax on every push to this repo.
+* To run tests manually, using python3 from the main directory, execute:
+    * `pip install -r tests/requirements.txt`
+    * `jsonschema --instance data/terms.json data/terms.schema.json`
+    * `cd tests && python validate_json.py`
 
 ## Stack
 
