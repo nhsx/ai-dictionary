@@ -1,3 +1,4 @@
+![node version 14](https://img.shields.io/badge/node-v14-green)
 [![Validate terms.json](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml/badge.svg)](https://github.com/nhsx/ai-dictionary/actions/workflows/validate-json.yml)
 
 # NHS AI Dictionary 
@@ -14,7 +15,8 @@ To add new terms, simply add a new item to the terms array following the structu
 
 | Field       | Type   | Description                                                       |
 |-------------|--------|-------------------------------------------------------------------|
-| title       | string | The title of the term e.g. "Artificial Intelligence".            |
+| title       | string | The title of the term e.g. "Artificial Intelligence".             |
+| acronym     | string | (optional) an acronym e.g. "AI"                                   |
 | description | string | The definition of the term.                                       |
 | slug        | string | The short-name of the term for use in the URL and related terms e.g. "ai".
 | related     | array  | Array of slugs of related terms, e.g. "ai" or "machine-learning". |
@@ -31,7 +33,13 @@ There are also some other supporting tools such as Framer Motion, Headless UI an
 
 There is currently no 'backend' for this project. A JSON file (`data/terms.json`) is used to house and manage the available terms. 
 
-## Development
+## Getting started
+
+You will need:
+
+* node v14
+
+It is recommended to use a node package manager like [nvm](https://github.com/nvm-sh/nvm) to manage node versions.
 
 Once the project has been cloned, ensure you have installed the required dependancies using the command below:
 
@@ -69,7 +77,7 @@ npm run export
 
 ## Deployment  
 
-Upon merging into production, the project is automatically deployed to Github Pages via a Githook Action found in `.github/workflows/gh-pages-deployment.yml`. 
+Upon merging into `main`, the project is automatically deployed to Github Pages via a Githook Action found in `.github/workflows/gh-pages-deploy.yml`. 
 
 ## Licence
 
