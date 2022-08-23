@@ -56,6 +56,7 @@
         "supervised",
         "unsupervised",
         "reinforcement",
+        "computer-vision",
         "fairness",
         "bias",
         "explainability"
@@ -82,7 +83,11 @@
         "synthetic-data",
         "structured",
         "unstructured",
+        "feature",
+        "data-cleaning",
         "database",
+        "tre",
+        "sql",
         "binary",
         "sequential-data",
         "model"
@@ -95,6 +100,7 @@
       "related": [
         "ai",
         "machine-learning",
+        "feature",
         "algorithm",
         "data",
         "mlops"
@@ -110,6 +116,8 @@
         "unsupervised",
         "reinforcement",
         "algorithm",
+        "feature",
+        "label",
         "gradient-descent",
         "statistics",
         "federated-learning",
@@ -123,6 +131,7 @@
       "description": "A type of machine learning where you do not know the outcome or definition of your data, and are looking for patterns. This includes clustering techniques such as k-means and principal component analysis (PCA).<br><br>For example, unsupervised machine learning can help identify different groups of hospital patients who use hospital services in different ways.",
       "termCode": "unsupervised",
       "related": [
+        "clustering",
         "supervised",
         "reinforcement",
         "statistics",
@@ -139,6 +148,8 @@
         "unsupervised",
         "reinforcement",
         "statistics",
+        "label",
+        "feature",
         "machine-learning",
         "ai",
         "predictive-analytics",
@@ -272,7 +283,8 @@
       "description": "An agreed set of definitions, guidelines and sometimes technical approaches for a specific area. Formal Standards may be mandated by the Government, whereas de facto standards are created and used by communities working in that space.<br><br>For example, ISO 13485 is a UK <a target='_blank' href='https://www.gov.uk/guidance/designated-standards#healthcare-engineering'>Designated Standard</a> for quality management systems for medical device, it can be used to <a target='_blank' href='https://www.gov.uk/guidance/medical-devices-conformity-assessment-and-the-ukca-mark#compliance-with-designated-standards'>demonstrate conformance</a> with parts of the medical device regulations.",
       "termCode": "standard",
       "related": [
-        "interoperability"
+        "interoperability",
+        "rap"
       ]
     },
     {
@@ -323,7 +335,9 @@
       "termCode": "database",
       "related": [
         "data",
+        "sql",
         "linked-data",
+        "tre",
         "structured",
         "cloud",
         "on-prem",
@@ -337,7 +351,8 @@
       "related": [
         "data",
         "unstructured",
-        "database"
+        "database",
+        "sql"
       ]
     },
     {
@@ -382,6 +397,7 @@
       "termCode": "general-explainability",
       "related": [
         "explainability",
+        "feature",
         "ai",
         "fairness",
         "bias",
@@ -548,10 +564,12 @@
     },
     {
       "name": "Classification",
-      "description": "A type of machine learning model which can predict whether or not you belong to a specific class, or group. Common approaches include logistic regression, decision trees and random forests.<br><br>For example, a classification model may be built to identify individuals with  diabetes. The classes could be Type-I diabetes, Type-II diabetes, gestational diabetes or no diabetes. Normally, a model would return the probability that you belonged to each class, and would assign you to the class with the highest probability.",
+      "description": "A type of machine learning model which can predict whether or not you belong to a specific class, or label. Common approaches include logistic regression, decision trees and random forests.<br><br>For example, a classification model may be built to identify individuals with  diabetes. The classes could be Type-I diabetes, Type-II diabetes, gestational diabetes or no diabetes. Normally, a model would return the probability that you belonged to each class, and would assign you to the class with the highest probability.",
       "termCode": "classification",
       "related": [
         "supervised",
+        "label",
+        "feature",
         "ai",
         "machine-learning",
         "predictive-analytics",
@@ -802,6 +820,7 @@
       "termCode": "interoperability",
       "related": [
         "standard",
+        "rap",
         "api"
       ]
     },
@@ -822,8 +841,11 @@
       "termCode": "neural-network",
       "related": [
         "deep-learning",
+        "cnn",
+        "rnn",
         "graph-neural-network",
         "model",
+        "feature",
         "machine-learning",
         "structured",
         "unstructured",
@@ -837,10 +859,13 @@
       "termCode": "deep-learning",
       "related": [
         "neural-network",
+        "cnn",
+        "rnn",
         "machine-learning",
         "transformer",
         "supervised",
         "ai",
+        "computer-vision",
         "explainability"
       ]
     },
@@ -887,10 +912,12 @@
       "description": "A collection of techniques which use speech and text data.<br><br>Speech-to-text systems convert verbal speech to text, such as in a smart speaker.<br><br>Natural language understanding systems convert text into concepts or instructions, such as your requests to play music or offer directions.<br><br>Text-to-speech systems convert text into verbal speech, such as responses from a smart speaker.<br><br>Natural language generation will create human-like text based on concepts, such as writing a report from a summary table of data.<br><br>NLP has developed significantly in recent years in part due to the availability of deep learning algorithms and transfomers.",
       "termCode": "nlp",
       "related": [
+        "ner",
         "deep-learning",
         "transformer",
         "sequential-data",
         "neural-network",
+        "rnn",
         "machine-learning",
         "supervised",
         "ai"
@@ -1009,7 +1036,179 @@
       "termCode": "sequential-data",
       "related": [
         "data",
+        "rnn",
         "nlp"
+      ]
+    },
+    {
+      "name": "Feature",
+      "description": "A single type of measurement that is used as the input for a model, for example age, sex or heart rate are all types of features. Synonymous to variables, covariates or columns.",
+      "termCode": "feature",
+      "related": [
+        "feature-selection",
+        "feature-engineering",
+        "label",
+        "data",
+        "machine-learning",
+        "supervised",
+        "unsupervised",
+        "statistics"
+      ]
+    },
+    {
+      "name": "Feature selection",
+      "description": "The process of deciding which features to include in a model.",
+      "termCode": "feature-selection",
+      "related": [
+        "feature",
+        "model",
+        "feature-engineering",
+        "data-cleaning",
+        "machine-learning",
+        "data",
+        "supervised",
+        "unsupervised",
+        "statistics"
+      ]
+    },
+    {
+      "name": "Feature engineering",
+      "description": "The process of creating a new feature to include in a model, for example the time since a patient's appointment, or their average blood pressure measurement.",
+      "termCode": "feature-engineering",
+      "related": [
+        "feature",
+        "feature-selection",
+        "machine-learning",
+        "data",
+        "supervised",
+        "unsupervised",
+        "statistics"
+      ]
+    },
+    {
+      "name": "Label",
+      "description": "Category used to describe an outcome, or class, that may be used to train a supervised machine learning classification model.<br><br>For example: vital status or whether a chest radiograph showed pneumonia or not. Often binary, but not always.",
+      "termCode": "label",
+      "related": [
+        "feature",
+        "machine-learning",
+        "supervised",
+        "classification"
+      ]
+    },
+    {
+      "name": "Clustering",
+      "description": "An application of unsupervised machine learning that seeks to 'cluster' data into groups by identifying similar pattens.",
+      "termCode": "clustering",
+      "related": [
+        "machine-learning",
+        "unsupervised"
+      ]
+    },
+    {
+      "name": "Computer vision",
+      "description": "A branch of AI relating to processing of images, videos and other spatially defined inputs.<br><br>For example processing chest radiographs or dental x-rays.",
+      "termCode": "computer-vision",
+      "related": [
+        "neural-network",
+        "deep-learning",
+        "ai",
+        "cnn",
+        "segmentation"
+      ]
+    },
+    {
+      "name": "Convolutional neural network",
+      "acronym": "CNN",
+      "description": "A type of neural network architecture normally used for computer vision/image processing tasks, for example classifying chest radiographs as normal/abnormal or segmenting areas of possible lung cancer.<br><br>CNNs use a convolutional filter to extract patterns in the spatial domain such as edges, curves and shapes.",
+      "termCode": "cnn",
+      "related": [
+        "neural-network",
+        "deep-learning",
+        "ai",
+        "computer-vision",
+        "segmentation"
+      ]
+    },
+    {
+      "name": "Segmentation",
+      "description": "A computer vision task that involves separating out regions of interest from an image, for example identifying the lung areas from a chest radiograph.",
+      "termCode": "segmentation",
+      "related": [
+        "neural-network",
+        "deep-learning",
+        "ai",
+        "cnn",
+        "computer-vision"
+      ]
+    },
+    {
+      "name": "Recurrent neural network",
+      "acronym": "RNN",
+      "description": "A type of neural network architecture used to model sequential data, for example predicting deterioration from regular vital signs in ICU patients.",
+      "termCode": "rnn",
+      "related": [
+        "neural-network",
+        "deep-learning",
+        "ai",
+        "sequential-data",
+        "nlp"
+      ]
+    },
+    {
+      "name": "Named entity recognition",
+      "acronym": "NER",
+      "description": "A type of natural language processing task that seeks to identify named entities from free text into pre-specified categories, for example extracting drug names from a discharge letter.",
+      "termCode": "ner",
+      "related": [
+        "neural-network",
+        "deep-learning",
+        "ai",
+        "sequential-data",
+        "nlp",
+        "transformer"
+      ]
+    },
+    {
+      "name": "Structured query language",
+      "acronym": "SQL",
+      "description": "A programming languaged used to query (search) information stored in relational databases.",
+      "termCode": "sql",
+      "related": [
+        "data",
+        "database",
+        "structured"
+      ]
+    },
+    {
+      "name": "Trusted research environment",
+      "acronym": "TRE",
+      "description": "A secure computing environment that allows remote access to data for approved researchers. Also known as Secure Data Environment (SDE) or Data Safe Haven.<br><br>In June 2022, the Department for Health and Social Care published the <a target='_blank' href='https://www.gov.uk/government/publications/data-saves-lives-reshaping-health-and-social-care-with-data/data-saves-lives-reshaping-health-and-social-care-with-data'>Data saves lives: reshaping health and social care with data</a> policy paper, which includes a mandate on using secure data environments for NHS data.",
+      "termCode": "tre",
+      "related": [
+        "data",
+        "database",
+        "standard"
+      ]
+    },
+    {
+      "name": "Reproducible analytical pipeline",
+      "acronym": "RAP",
+      "description": "An automated set of code that processes data in line with best practice and ensures that it delivers the same results each time it runs.<br><br>In June 2022, the Department for Health and Social Care published the <a target='_blank' href='https://www.gov.uk/government/publications/data-saves-lives-reshaping-health-and-social-care-with-data/data-saves-lives-reshaping-health-and-social-care-with-data'>Data saves lives: reshaping health and social care with data</a> policy paper, which includes a recommendation on promoting and resourcing RAPs as  the minimum standard for academic and NHS data analysis.<br><br>NHS Digital runs an open <a target='_blank' href='https://github.com/NHSDigital/rap-community-of-practice'>RAP community of practice</a>.",
+      "termCode": "rap",
+      "related": [
+        "data",
+        "standard",
+        "interoperability"
+      ]
+    },
+    {
+      "name": "Data cleaning",
+      "description": "The process of curating data to identify and fix, or remove, missing, corrupted or incorrect items to ensure quality control.",
+      "termCode": "data-cleaning",
+      "related": [
+        "data",
+        "feature-selection"
       ]
     }
   ]
