@@ -90,7 +90,7 @@ Upon merging into `main`, the project is automatically deployed to Github Pages 
 Unless stated otherwise, the codebase is released under [the MIT Licence][mit].
 This covers both the codebase and any sample code in the documentation.
 
-The documentation is [© Crown copyright][copyright] and available under the terms
+The documentation including term definitions is [© Crown copyright][copyright] and available under the terms
 of the [Open Government 3.0][ogl] licence.
 
 [mit]: LICENCE.md
