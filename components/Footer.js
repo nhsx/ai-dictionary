@@ -19,7 +19,9 @@ export default function Footer() {
                   >
                      Content © Crown copyright OGL v3.0
                   </a>
+                  
                </Link>
+               
                <Link href="https://github.com/nhsx/ai-dictionary/blob/main/LICENCE.md">
                   <a
                   target="_BLANK"
