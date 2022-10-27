@@ -1210,6 +1210,17 @@
         "data",
         "feature-selection"
       ]
+    },
+    {
+      "name": "Genetic Algorithm",
+      "description": "A method of searching for the best solution based on a defined scoring method (also called a heuristic). It is used to find optimised solutions for complex problems based on the theory of natural selection.<br><br>The algorithm goes through iterations, using random processes to produce candidates to be assessed by the algoritm. At the end of the process, the strongest candidate(s) are selected, based on your chosen heuristic. ",
+      "termCode": "genetic-algorithm",
+      "related": [
+        "ai",
+        "algorithm",
+        "data",
+        "feature-selection"
+      ]
     }
   ]
 }
