@@ -601,7 +601,7 @@
     },
     {
       "name": "Accuracy",
-      "description": "<em>Classification metric</em>.<br><br>The proportion of correctly identified positive and negative cases in a classification model.<br><br>For example, an AI model that correctly identifies all positive and negative cases of patients with e.g. Covid-19 would have an accuracy of 1.0 (100%).<br><br>Note that in <a href='https://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-ai-and-data-protection/what-do-we-need-to-do-to-ensure-lawfulness-fairness-and-transparency-in-ai-systems/?q=controller#whatdoweneed' target='_blank'>data protection law</a>, accuracy refers to accurate and up to date record keeping.",
+      "description": "<em>Classification metric</em>.<br><br>The proportion of correctly identified positive and negative cases in a classification model.<br><br>For example, an AI model that correctly identifies all positive and negative cases of patients with e.g. Covid-19 would have an accuracy of 1.0 (100%).<br><br>Note that in <a href='https://ico.org.uk/for-organisations/guide-to-data-protection/key-dp-themes/guidance-on-artificial-intelligence-and-data-protection/' target='_blank'>data protection law</a>, accuracy refers to accurate and up to date record keeping.",
       "termCode": "accuracy",
       "related": [
         "specificity",
