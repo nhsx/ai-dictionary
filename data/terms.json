@@ -933,6 +933,37 @@
         "ai"
       ]
     },
+{ 
+      "name": "Large Language Model",
+      "acronym": "LLM",
+      "description": "A large language model is a neural network that is trained on a vast amount of text. The training uses unlabelled text and some form of self-supervised learning. Usually, LLMs will have billions of parametres. They are an instance of a foundation model (FM).",
+      "termCode": "llm",
+      "related": [
+        "nlp",
+	"semi-supervised",
+	"foundation-model",
+        "neural-network",
+        "machine-learning",
+        "supervised",
+        "ai"
+      ]
+    },
+{     
+      "name": "Foundation Model", 
+      "acronym": "FM",
+      "description": "A foundation model is a ML model trained on large data. The data is unlabelled and the model is training by a self-supervised learning algorithm. ",
+      "termCode": "foundation-model",
+      "related": [
+        "nlp",
+        "semi-supervised",
+        "llm",
+        "foundation-model",
+        "neural-network",
+        "machine-learning",
+        "supervised",
+        "ai"
+      ]
+    },
     {
       "name": "Transformer",
       "description": "An approach to deep learning which uses an 'attention' mechanism to understand context in text or image data, without requiring data to be processed in order.<br><br>Transformers have led to recent breakthroughs in NLP and computer vision.",
