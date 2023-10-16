@@ -1318,7 +1318,12 @@
       "name": "Memorandum of Understanding",
       "acronym": "MoU",
       "description": "A type of agreement between two (bilateral) or more (multilateral) parties. It expresses a convergence of will between the parties, indicating an intended common line of action.",
-      "termCode": "mou"
+      "termCode": "mou",
+      "related": [
+        "data-protection",
+        "dpia",
+	"ig"      
+      ]	    
     },
     {
       "name": "Pilot",
