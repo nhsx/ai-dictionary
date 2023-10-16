@@ -229,7 +229,8 @@
       "termCode": "mlops",
       "related": [
         "machine-learning",
-        "model"
+        "model",
+        "deployment-platform"
       ]
     },
     {
@@ -303,7 +304,8 @@
       "termCode": "pseudonymisation",
       "related": [
         "data-protection",
-        "anonymisation"
+        "anonymisation",
+        "dpia"
       ]
     },
     {
@@ -313,6 +315,7 @@
       "related": [
         "pseudonymisation",
         "data-protection",
+        "dpia",
         "synthetic-data"
       ]
     },
@@ -324,7 +327,8 @@
         "anonymisation",
         "pseudonymisation",
         "federated-learning",
-        "synthetic-data"
+        "synthetic-data",
+        "dpia"
       ]
     },
     {
@@ -1260,6 +1264,90 @@
         "algorithm",
         "data",
         "feature-selection"
+      ]
+    },
+    {
+      "name": "Deployment Platform",
+      "description": "Software tools that automate the process of deploying software applications and services to production environments.",
+      "termCode": "deployment-platform",
+      "related": [
+        "api",
+        "interoperability",
+        "cloud",
+        "rap"
+      ]
+    },
+    {
+      "name": "Data Protection Impact Assessment",
+      "acronym": "DPIA",
+      "description": "A process designed to help organisations systematically analyse, identify and minimise the data protection risks of a project or plan.<br><br>It is a key part of your accountability obligations under the <a target='_blank' href='https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/'>UK General Data Protection Regulation (GDPR)</a>.",
+      "termCode": "dpia",
+      "related": [
+        "aia",
+        "data-protection",
+        "fairness",
+        "bias",
+        "linked-data",
+        "anonymisation",
+        "pseudonymisation"
+      ]
+    },
+    {
+      "name": "Ethical AI",
+      "description": "The selected AI imaging technologies are developed and used in a manner that is consistent with ethical principles and patient rights.",
+      "termCode": "ethical-ai",
+      "related": [
+        "aia",
+        "data-protection",
+        "fairness",
+        "bias",
+        "explainability"
+      ]
+    },
+    {
+      "name": "Information Governance",
+      "acronym": "IG",
+      "description": "The legal framework governing the use of personal confidential data in health care is complex. It includes the NHS Act 2006, the Health and Social Care Act 2012, the Data Protection Act, and the Human Rights Act.",
+      "termCode": "ig",
+      "related": [
+        "data-protection",
+        "dpia"
+      ]
+    },
+    {
+      "name": "Memorandum of Understanding",
+      "acronym": "MoU",
+      "description": "A type of agreement between two (bilateral) or more (multilateral) parties. It expresses a convergence of will between the parties, indicating an intended common line of action.",
+      "termCode": "mou"
+    },
+    {
+      "name": "Pilot",
+      "description": "A small-scale experiment or set of observations undertaken to decide how and whether to launch a full-scale project.",
+      "termCode": "pilot",
+      "related": [
+        "clinical-trials",
+        "poc"
+      ]
+    },
+    {
+      "name": "Picture Archiving and Communication Systems",
+      "acronym": "PACS",
+      "description": "A system based on the universal (Digital Imaging and Communications in Medicine, DICOM) standard, which uses a server to store and allow easy access to high quality radiologic images.",
+      "termCode": "pacs",
+      "related": [
+        "database",
+        "standard",
+        "on-prem",
+        "cloud"
+      ]
+    },
+    {
+      "name": "Shadow Deployment",
+      "description": "A method of testing a candidate model for production where production data runs through the model without the model actually returning predictions to the service or customers. Essentially, simulating how the model would perform in the production environment.",
+      "termCode": "shadow-deployment",
+      "related": [
+        "mlops",
+        "deployment-platform"
       ]
     }
   ]
