@@ -1427,6 +1427,16 @@
       ]
     },
     {
+      "name": "Embedding",
+      "description": "The process which some text (or other complex input data) is rendered down into a vector (potentially of many dimensions). There are a number of ways of doing this, one such is <a target='_blank' href='https://www.sbert.net'>Sentence Transformer</a>.",
+      "termCode": "embedding",
+      "related": [
+        "rag",
+        "retrieval",
+        "vector-store"
+      ]
+    },
+    {
       "name": "Prompt",
       "description": "The string submitted to an AI model to generate a response. In RAG pipelines, this is the query with the stuffed documents inserted.",
       "termCode": "prompt",
