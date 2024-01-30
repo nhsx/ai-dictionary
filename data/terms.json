@@ -1356,6 +1356,123 @@
       ]
     },
     {
+      "name": "Retrieval Augmented Generation (RAG)",
+      "description": "A type of AI pipeline where the submitted query is first used to retrieve relevant documents from a database, and then the retrieved documents are used to generate a response to the query such as through stuffing these into the prompt prior to passing to the model.",
+      "termCode": "rag",
+      "related": [
+        "retrieval",
+        "stuffing",
+        "vector-store",
+        "chunking",
+        "embedding",
+        "prompt",
+        "prompt-engineering"
+      ]
+    },
+    {
+      "name": "Retrieval",
+      "description": "The stage in a RAG pipeline where the submitted query is used to retrieve relevant documents from a database. There are numerous retrieval strategies, including simply returning top N nearest vectors to the embedded vector of the query.",
+      "termCode": "retrieval",
+      "related": [
+        "rag",
+        "stuffing",
+        "vector-store",
+        "chunking",
+        "embedding",
+        "prompt",
+        "prompt-engineering"
+      ]
+    },
+    {
+      "name": "Stuffing",
+      "description": "The stage in the RAG pipeline where the retrieved documents are inserted (\"stuffed\") into the prompt prior to passing to the model. This can also include inserting relevant metadata about the documents.",
+      "termCode": "stuffing",
+      "related": [
+        "rag",
+        "retrieval",
+        "vector-store",
+        "chunking",
+        "embedding",
+        "prompt",
+        "prompt-engineering"
+      ]
+    },
+    {
+      "name": "Vector-store",
+      "description": "A database (such as that use in RAG pipelines) in which are stored embedding vectors - high dimensional representations of documents, etc. alongside any metadata about these documents. Retrieving similar vectors is very fast, even when the database is very large.",
+      "termCode": "vector-store",
+      "related": [
+        "rag",
+        "retrieval",
+        "stuffing",
+        "chunking",
+        "embedding",
+        "prompt",
+        "prompt-engineering"
+      ]
+    },
+    {
+      "name": "Chunking",
+      "description": "The process of breaking larger documents up into chunks prior to embedding and insertion into a vector-store. This is done to ensure that during RAG, only relevant sections of a large document are retrieved and stuffed into the prompt (to avoid using up too much of the models context window).",
+      "termCode": "chunking",
+      "related": [
+        "rag",
+        "retrieval",
+        "stuffing",
+        "vector-store",
+        "embedding",
+        "prompt",
+        "prompt-engineering",
+        "context-window"
+      ]
+    },
+    {
+      "name": "Embedding",
+      "description": "The process which some text (or other complex input data) is rendered down into a vector (potentially of many dimensions). There are a number of ways of doing this, one such is <a target='_blank' href='https://www.sbert.net'>Sentence Transformer</a>.",
+      "termCode": "embedding",
+      "related": [
+        "rag",
+        "retrieval",
+        "vector-store"
+      ]
+    },
+    {
+      "name": "Prompt",
+      "description": "The string submitted to an AI model to generate a response. In RAG pipelines, this is the query with the stuffed documents inserted.",
+      "termCode": "prompt",
+      "related": [
+        "rag",
+        "llm",
+        "prompt-engineering",
+        "context-window"
+      ]
+    },
+    {
+      "name": "Prompt Engineering",
+      "description": "The process of adjusting a prompt to improve the performance of a model. This can involve giving the AI a clear 'role', reorganising the prompt content, providing tags to guide the AO, providing examples within the prompt, etc.",
+      "termCode": "prompt-engineering",
+      "related": [
+        "rag",
+        "llm",
+        "prompt",
+        "context-window"
+      ]
+    },
+    {
+      "name": "Context Window",
+      "description": "The maximum number of tokens that can be submitted to an AI model (sometimes this also includes those returned). This is important in RAG pipelines as retrieved information needs to fit into the context window, along with the original query (and potentially along with any response).",
+      "termCode": "context-window",
+      "related": [
+        "rag",
+        "retrieval",
+        "stuffing",
+        "vector-store",
+        "chunking",
+        "prompt",
+        "prompt-engineering"
+      ]
+    },
+    {
       "name": "Machine unlearning",
       "description": "Approaches to efficiently remove the influence of a subset of the training data from the weights of a trained model, without retraining the model from scratch, and whilst retaining the model’s performance on downstream tasks. Machine unlearning could be used to remove the influence of personal data from a model if someone exercises their “Right to be Forgotten”.",
       "termCode": "machine-unlearning",
@@ -1392,7 +1509,7 @@
       "related": [
         "machine-editing",
         "machine-unlearning",
-	"memorization"
+	      "memorization"
       ]
     }
   ]
