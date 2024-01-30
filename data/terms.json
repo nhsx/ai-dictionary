@@ -1471,6 +1471,46 @@
         "prompt",
         "prompt-engineering"
       ]
+    },
+    {
+      "name": "Machine unlearning",
+      "description": "Approaches to efficiently remove the influence of a subset of the training data from the weights of a trained model, without retraining the model from scratch, and whilst retaining the model’s performance on downstream tasks. Machine unlearning could be used to remove the influence of personal data from a model if someone exercises their “Right to be Forgotten”.",
+      "termCode": "machine-unlearning",
+      "related": [
+        "machine-editing",
+        "memorization",
+	"training-data-leakage"
+      ]
+    },
+    {
+      "name": "Machine editing",
+      "description": "Approaches to efficiently modify the behaviour of a machine learning model on certain inputs, whilst having little impact on unrelated inputs. Machine Editing can be used to inject or update knowledge in the model or modify undesired behaviours.",
+      "termCode": "machine-editing",
+      "related": [
+        "machine-unlearning",
+        "memorization",
+	"training-data-leakage"
+      ]
+    },
+    {
+      "name": "Memorization",
+      "description": "Machine Learning Models have been shown to memorize aspects of their training data during the training process. This has been demonstrated to correlate with model size (number of parameters).",
+      "termCode": "memorization",
+      "related": [
+        "machine-editing",
+        "machine-unlearning",
+	"training-data-leakage"
+      ]
+    },
+    {
+      "name": "Training data leakage",
+      "description": "Aspects of the training data can be memorized by a machine learning model during training and are consequently vulnerable to being inferred or extracted verbatim from the model alone. This is possible as the behaviour of the model on samples which were members of the training data is distinguishable from samples the model has not seen before. This leakage has been demonstrated on a range of machine learning models including Transformer-based Image and Language Models.",
+      "termCode": "training-data-leakage",
+      "related": [
+        "machine-editing",
+        "machine-unlearning",
+	      "memorization"
+      ]
     }
   ]
 }
