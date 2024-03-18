@@ -937,7 +937,7 @@
         "ai"
       ]
     },
-{ 
+{
       "name": "Large Language Model",
       "acronym": "LLM",
       "description": "A large language model is a neural network that is trained on a vast amount of text. The training uses unlabelled text and some form of self-supervised learning. Usually, LLMs will have billions of parametres. They are an instance of a foundation model (FM).",
@@ -952,8 +952,8 @@
         "ai"
       ]
     },
-{     
-      "name": "Foundation Model", 
+{
+      "name": "Foundation Model",
       "acronym": "FM",
       "description": "A foundation model is a ML model trained on large data. The data is unlabelled and the model is training by a self-supervised learning algorithm. ",
       "termCode": "foundation-model",
@@ -1294,7 +1294,7 @@
     },
     {
       "name": "Ethical AI",
-      "description": "The selected AI imaging technologies are developed and used in a manner that is consistent with ethical principles and patient rights.",
+      "description": "AI systems that are developed and deployed with attention to the harms created or exacerbated by the systems. As a minimum this usually includes consideration of fairness, accountability and transparency.",
       "termCode": "ethical-ai",
       "related": [
         "aia",
@@ -1322,8 +1322,8 @@
       "related": [
         "data-protection",
         "dpia",
-	"ig"      
-      ]	    
+	"ig"
+      ]
     },
     {
       "name": "Pilot",
